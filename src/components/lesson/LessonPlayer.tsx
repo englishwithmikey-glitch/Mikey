@@ -21,6 +21,9 @@ import {
 } from 'lucide-react';
 
 import { Course, Lesson } from '../../types';
+import type { PracticeStep } from '../../lib/practice';
+import PracticeStudio from './PracticeStudio';
+import { usePracticeSpeech } from './usePracticeSpeech';
 
 interface LessonPlayerProps {
   course: DbCourse | Course;
@@ -49,7 +52,9 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
   const [showTranslations, setShowTranslations] = useState<boolean>(true);
   const [revealedCurrentCard, setRevealedCurrentCard] = useState<boolean>(false);
   const [viewMode, setViewMode] = useState<'focus' | 'list'>('focus');
-  const [isPlayingAudio, setIsPlayingAudio] = useState<boolean>(false);
+  const [practiceStep, setPracticeStep] = useState<PracticeStep>('learn');
+  const playback = usePracticeSpeech(`${lesson.id}:${currentIndex}:${practiceStep}:${viewMode}`);
+  const isPlayingAudio = playback.speaking;
   const [isCompletedState, setIsCompletedState] = useState<boolean>(false);
   const [isSavingProgress, setIsSavingProgress] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
@@ -64,6 +69,7 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
     setLoading(true);
     setErrorMsg(null);
     setIsCompletedState(false);
+    setPracticeStep('learn');
     setSaveError(null);
     setIsSavingProgress(false);
     savingRef.current = false;
@@ -91,39 +97,7 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
     }
   }, [lesson.id]);
 
-  // Requirement 7: Use browser speech synthesis for English audio if no audio file is available
-  const playAudio = (text: string, audioUrl?: string) => {
-    if (audioUrl && audioUrl.trim()) {
-      try {
-        const audio = new Audio(audioUrl);
-        setIsPlayingAudio(true);
-        audio.onended = () => setIsPlayingAudio(false);
-        audio.onerror = () => {
-          speakTTS(text);
-        };
-        audio.play().catch(() => speakTTS(text));
-        return;
-      } catch {
-        speakTTS(text);
-        return;
-      }
-    }
-    speakTTS(text);
-  };
-
-  const speakTTS = (text: string) => {
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.9;
-      utterance.pitch = 1.0;
-      utterance.onstart = () => setIsPlayingAudio(true);
-      utterance.onend = () => setIsPlayingAudio(false);
-      utterance.onerror = () => setIsPlayingAudio(false);
-      window.speechSynthesis.speak(utterance);
-    }
-  };
+  const playAudio = (text: string, audioUrl?: string) => playback.speak(text, 0.9, audioUrl);
 
   // Requirement 8: Next sentence button
   const handleNext = async () => {
@@ -133,6 +107,11 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
       setRevealedCurrentCard(false);
       return;
     }
+    await finishLesson();
+  };
+
+  const finishLesson = async () => {
+    if (!sentences.length || savingRef.current || isCompletedState) return;
     const key = activeLesson.current;
     savingRef.current = true;
     setIsSavingProgress(true);
@@ -161,7 +140,9 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (viewMode !== 'focus' || sentences.length === 0) return;
+      const target = e.target as HTMLElement;
+      if (['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(target?.tagName) || target?.isContentEditable) return;
+      if (viewMode !== 'focus' || practiceStep !== 'learn' || sentences.length === 0) return;
       if (e.key === 'ArrowRight') {
         handleNext();
       } else if (e.key === 'ArrowLeft') {
@@ -174,7 +155,7 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex, sentences, viewMode, isCompletedState, markLessonComplete]);
+  }, [currentIndex, sentences, viewMode, practiceStep, isCompletedState, markLessonComplete]);
 
   const currentSentence = sentences[currentIndex];
 
@@ -310,8 +291,24 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
           </div>
         )}
 
+        {playback.message && <p role="status" className="text-amber-200">{playback.message}</p>}
+        {!loading && !errorMsg && sentences.length > 0 && viewMode === 'focus' && (
+          <PracticeStudio
+            key={`${lesson.id}:${user?.id}`}
+            scope={`${lesson.id}:${user?.id}`}
+            courseTitle={course.title}
+            lessonTitle={lesson.title}
+            sentences={sentences}
+            index={currentIndex}
+            onIndex={setCurrentIndex}
+            step={practiceStep}
+            onStep={setPracticeStep}
+            onComplete={finishLesson}
+            saving={isSavingProgress || isCompletedState}
+          />
+        )}
         {/* STATE 4: ACTIVE SENTENCE LEARNING (FOCUS MODE) */}
-        {!loading && !errorMsg && sentences.length > 0 && viewMode === 'focus' && currentSentence && (
+        {!loading && !errorMsg && sentences.length > 0 && viewMode === 'focus' && practiceStep === 'learn' && currentSentence && (
           <div className="space-y-6">
             {/* Progress indicator */}
             <div className="space-y-2">

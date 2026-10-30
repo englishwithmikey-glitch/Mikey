@@ -1,0 +1,420 @@
+# 3 My Family
+My family is small.|Gia đình tôi có ít người.
+There are four people in my family.|Gia đình tôi có bốn người.
+What is your mother's name?|Mẹ bạn tên là gì?
+Her name is Lan.|Bà ấy tên là Lan.
+How old is your father?|Bố bạn bao nhiêu tuổi?
+He is fifty years old.|Ông ấy năm mươi tuổi.
+My sister lives near me.|Chị gái tôi sống gần tôi.
+My brother is a student.|Em trai tôi là học sinh.
+My parents live in Hue.|Bố mẹ tôi sống ở Huế.
+I visit my grandparents on Sundays.|Tôi đến thăm ông bà vào các ngày Chủ nhật.
+My grandmother likes cooking.|Bà tôi thích nấu ăn.
+My grandfather likes reading.|Ông tôi thích đọc sách.
+We eat dinner together.|Chúng tôi ăn tối cùng nhau.
+We talk after dinner.|Chúng tôi nói chuyện sau bữa tối.
+Who is that boy?|Cậu bé kia là ai?
+He is my cousin.|Cậu ấy là em họ tôi.
+Do you live with your parents?|Bạn có sống với bố mẹ không?
+Yes, I live with my parents.|Có, tôi sống với bố mẹ.
+My aunt works in a hospital.|Dì tôi làm việc ở bệnh viện.
+My uncle is a driver.|Chú tôi là tài xế.
+# 4 My Home
+Where is your house?|Nhà bạn ở đâu?
+My house is near the park.|Nhà tôi ở gần công viên.
+Do you live in a flat?|Bạn có sống trong căn hộ không?
+Yes, I live in a flat.|Có, tôi sống trong căn hộ.
+The living room is large.|Phòng khách rộng.
+My bedroom is small.|Phòng ngủ của tôi nhỏ.
+There is a bed in my room.|Có một chiếc giường trong phòng tôi.
+There is a lamp on the desk.|Có một chiếc đèn trên bàn học.
+The window is open.|Cửa sổ đang mở.
+Please close the door.|Vui lòng đóng cửa lại.
+Where are my shoes?|Giày của tôi ở đâu?
+They are next to the door.|Chúng ở cạnh cửa.
+The sofa is in the living room.|Ghế sofa ở trong phòng khách.
+There is a garden behind the house.|Có một khu vườn phía sau nhà.
+We have a small balcony.|Chúng tôi có một ban công nhỏ.
+I clean my room on Saturdays.|Tôi dọn phòng vào các ngày thứ Bảy.
+The kitchen is downstairs.|Nhà bếp ở tầng dưới.
+My room is quiet.|Phòng tôi yên tĩnh.
+There are some flowers on the table.|Có vài bông hoa trên bàn.
+Please make yourself at home.|Bạn cứ tự nhiên như ở nhà nhé.
+# 5 Numbers and Age
+I am nineteen years old.|Tôi mười chín tuổi.
+My brother is twelve.|Em trai tôi mười hai tuổi.
+My father is forty-five.|Bố tôi bốn mươi lăm tuổi.
+My grandmother is seventy.|Bà tôi bảy mươi tuổi.
+How many people are there?|Có bao nhiêu người?
+There are six people.|Có sáu người.
+How many chairs do we need?|Chúng ta cần bao nhiêu chiếc ghế?
+We need eight chairs.|Chúng ta cần tám chiếc ghế.
+I have fifteen pencils.|Tôi có mười lăm chiếc bút chì.
+The room number is twenty-one.|Số phòng là hai mươi mốt.
+Please write your number here.|Vui lòng viết số của bạn ở đây.
+Can you count backwards from ten?|Bạn có thể đếm ngược từ mười không?
+There are thirty days in April.|Tháng Tư có ba mươi ngày.
+There are seven days in a week.|Một tuần có bảy ngày.
+One plus two is three.|Một cộng hai bằng ba.
+Ten minus four is six.|Mười trừ bốn bằng sáu.
+I need five more minutes.|Tôi cần thêm năm phút.
+My birthday is in May.|Sinh nhật tôi vào tháng Năm.
+Today is my birthday.|Hôm nay là sinh nhật tôi.
+Happy birthday to you!|Chúc mừng sinh nhật bạn!
+# 6 Time and Days
+It is six in the morning.|Bây giờ là sáu giờ sáng.
+It is ten at night.|Bây giờ là mười giờ tối.
+It is a quarter past eight.|Bây giờ là tám giờ mười lăm.
+It is a quarter to nine.|Bây giờ là tám giờ bốn mươi lăm.
+What time do you start work?|Bạn bắt đầu làm việc lúc mấy giờ?
+I start work at half past eight.|Tôi bắt đầu làm việc lúc tám giờ rưỡi.
+What time does the shop close?|Cửa hàng đóng cửa lúc mấy giờ?
+It closes at six.|Cửa hàng đóng cửa lúc sáu giờ.
+I am busy on Wednesday.|Tôi bận vào thứ Tư.
+Thursday is a good day for me.|Thứ Năm là ngày phù hợp với tôi.
+The meeting is on Friday.|Cuộc họp diễn ra vào thứ Sáu.
+We have lunch at noon.|Chúng tôi ăn trưa vào buổi trưa.
+I study in the evening.|Tôi học vào buổi tối.
+Please arrive on time.|Vui lòng đến đúng giờ.
+I am five minutes late.|Tôi đến muộn năm phút.
+What is the date today?|Hôm nay là ngày bao nhiêu?
+Today is the first of June.|Hôm nay là ngày một tháng Sáu.
+My appointment is at three.|Cuộc hẹn của tôi lúc ba giờ.
+Can we meet after lunch?|Chúng ta có thể gặp nhau sau bữa trưa không?
+Let us meet before six.|Chúng ta hãy gặp nhau trước sáu giờ.
+# 7 Food and Drinks
+What is your favourite food?|Món ăn yêu thích của bạn là gì?
+My favourite food is noodles.|Món ăn yêu thích của tôi là mì.
+I like fish.|Tôi thích cá.
+I do not eat meat.|Tôi không ăn thịt.
+Do you eat eggs for breakfast?|Bạn có ăn trứng vào bữa sáng không?
+I have bread and fruit.|Tôi ăn bánh mì và trái cây.
+Would you like an apple?|Bạn có muốn ăn một quả táo không?
+I would like a banana.|Tôi muốn ăn một quả chuối.
+There is some cheese in the fridge.|Có một ít phô mai trong tủ lạnh.
+We need some fresh vegetables.|Chúng ta cần một ít rau tươi.
+I am hungry.|Tôi đói.
+I am thirsty.|Tôi khát.
+This tea is hot.|Trà này nóng.
+The water is cold.|Nước lạnh.
+Please pass the salt.|Vui lòng đưa giúp tôi lọ muối.
+Do you want some sugar?|Bạn có muốn thêm đường không?
+I take my coffee without sugar.|Tôi uống cà phê không đường.
+I am allergic to peanuts.|Tôi bị dị ứng với đậu phộng.
+Does this contain milk?|Món này có chứa sữa không?
+I am full, thank you.|Tôi no rồi, cảm ơn bạn.
+# 8 At a Restaurant
+Do you have a reservation?|Bạn đã đặt bàn chưa?
+Yes, I have a reservation for seven.|Vâng, tôi đã đặt bàn lúc bảy giờ.
+Can we sit by the window?|Chúng tôi có thể ngồi cạnh cửa sổ không?
+Are you ready to order?|Bạn đã sẵn sàng gọi món chưa?
+We need a little more time.|Chúng tôi cần thêm một chút thời gian.
+What do you recommend?|Bạn gợi ý món gì?
+I recommend the fish.|Tôi gợi ý món cá.
+I would like the vegetable soup.|Tôi muốn gọi món súp rau.
+Can I have rice with that?|Cho tôi ăn kèm cơm được không?
+Just a small portion, please.|Cho tôi một phần nhỏ thôi.
+Can we have two glasses of water?|Cho chúng tôi hai cốc nước được không?
+Is there a vegetarian option?|Ở đây có món chay không?
+I cannot eat peanuts.|Tôi không thể ăn đậu phộng.
+How long will it take?|Món ăn sẽ mất bao lâu?
+About fifteen minutes.|Khoảng mười lăm phút.
+Excuse me, this is not my order.|Xin lỗi, đây không phải món tôi đã gọi.
+Can we have some more napkins?|Cho chúng tôi thêm khăn giấy được không?
+Everything is very nice.|Mọi thứ đều rất ngon.
+Can we pay separately?|Chúng tôi có thể thanh toán riêng không?
+Keep the change, please.|Bạn cứ giữ tiền thừa nhé.
+# 9 Shopping and Prices
+Where can I buy a notebook?|Tôi có thể mua vở ở đâu?
+I am looking for a small bag.|Tôi đang tìm một chiếc túi nhỏ.
+How much are these shoes?|Đôi giày này giá bao nhiêu?
+They are five hundred thousand dong.|Đôi giày có giá năm trăm nghìn đồng.
+Is this on sale?|Món này có đang giảm giá không?
+Do you have this in blue?|Bạn có món này màu xanh dương không?
+Can I see another one?|Tôi có thể xem chiếc khác không?
+This one is very nice.|Chiếc này rất đẹp.
+I will take it.|Tôi sẽ lấy món này.
+I need two of these.|Tôi cần hai món này.
+Do you sell batteries?|Bạn có bán pin không?
+Where is the supermarket?|Siêu thị ở đâu?
+What time do you open?|Cửa hàng mở cửa lúc mấy giờ?
+We open at nine.|Chúng tôi mở cửa lúc chín giờ.
+Can I have a bag, please?|Cho tôi xin một chiếc túi được không?
+I have my own bag.|Tôi có túi riêng rồi.
+Here is your change.|Đây là tiền thừa của bạn.
+Can I return this?|Tôi có thể trả lại món này không?
+I have the receipt.|Tôi có biên lai.
+The shop is closed today.|Hôm nay cửa hàng đóng cửa.
+# 10 Clothes and Colours
+What are you wearing today?|Hôm nay bạn mặc gì?
+I am wearing a white shirt.|Tôi đang mặc áo sơ mi trắng.
+My trousers are black.|Quần dài của tôi màu đen.
+She is wearing a green dress.|Cô ấy đang mặc một chiếc váy xanh lá.
+These socks are yellow.|Đôi tất này màu vàng.
+My favourite colour is purple.|Màu yêu thích của tôi là tím.
+Do you have a larger size?|Bạn có cỡ lớn hơn không?
+This is too big for me.|Chiếc này quá rộng với tôi.
+These trousers are too long.|Chiếc quần này dài quá.
+I need a pair of shoes.|Tôi cần một đôi giày.
+Can I try a smaller size?|Tôi có thể thử cỡ nhỏ hơn không?
+Where can I put my coat?|Tôi có thể để áo khoác ở đâu?
+This hat is brown.|Chiếc mũ này màu nâu.
+I like your new jacket.|Tôi thích chiếc áo khoác mới của bạn.
+Thank you. It is very warm.|Cảm ơn bạn. Nó rất ấm.
+I wear a uniform at work.|Tôi mặc đồng phục khi đi làm.
+Please take off your shoes.|Vui lòng cởi giày ra.
+Put on your coat.|Hãy mặc áo khoác vào.
+It is cold outside.|Bên ngoài trời lạnh.
+These clothes are comfortable.|Những bộ quần áo này thoải mái.
+# 11 Asking for Directions
+Where is the nearest pharmacy?|Hiệu thuốc gần nhất ở đâu?
+Is there a cafe near here?|Gần đây có quán cà phê nào không?
+Walk past the school.|Đi qua trường học.
+Cross the road carefully.|Hãy sang đường cẩn thận.
+Take the second road on the left.|Rẽ vào con đường thứ hai bên trái.
+The station is on your right.|Nhà ga ở bên phải bạn.
+It is between the bank and the cafe.|Nó nằm giữa ngân hàng và quán cà phê.
+You cannot miss it.|Bạn sẽ dễ dàng nhìn thấy nó.
+I am looking for the museum.|Tôi đang tìm bảo tàng.
+Am I going the right way?|Tôi có đang đi đúng đường không?
+Yes, keep going straight.|Đúng rồi, cứ tiếp tục đi thẳng.
+No, you need to turn back.|Không, bạn cần quay lại.
+How far is the station?|Nhà ga cách đây bao xa?
+It is about one kilometre away.|Nó cách đây khoảng một ki lô mét.
+Can I walk there?|Tôi có thể đi bộ đến đó không?
+The entrance is around the corner.|Lối vào ở ngay sau góc đường.
+Please follow me.|Vui lòng đi theo tôi.
+The lift is next to the stairs.|Thang máy ở cạnh cầu thang.
+Which floor is the office on?|Văn phòng ở tầng mấy?
+It is on the second floor.|Nó ở tầng hai.
+# 12 Getting Around Town
+Do you take the bus every day?|Bạn có đi xe buýt mỗi ngày không?
+I usually ride my bike.|Tôi thường đi xe đạp.
+I sometimes take a taxi.|Thỉnh thoảng tôi đi taxi.
+How long does the journey take?|Chuyến đi mất bao lâu?
+It takes about twenty minutes.|Mất khoảng hai mươi phút.
+Where can I buy a bus ticket?|Tôi có thể mua vé xe buýt ở đâu?
+Can I pay on the bus?|Tôi có thể trả tiền trên xe buýt không?
+Is this seat free?|Chỗ ngồi này có trống không?
+Yes, you can sit here.|Có, bạn có thể ngồi đây.
+Which bus should I take?|Tôi nên đi xe buýt nào?
+Take the number ten bus.|Hãy đi xe buýt số mười.
+The next bus comes in five minutes.|Xe buýt tiếp theo sẽ đến trong năm phút nữa.
+I need to change trains.|Tôi cần đổi tàu.
+Which platform do I need?|Tôi cần đến sân ga nào?
+The train is late.|Tàu đến muộn.
+Please fasten your seat belt.|Vui lòng thắt dây an toàn.
+Can you take me to this address?|Bạn có thể đưa tôi đến địa chỉ này không?
+There is a lot of traffic.|Đường rất đông xe.
+I prefer travelling by train.|Tôi thích đi tàu hơn.
+Let us leave a little earlier.|Chúng ta hãy đi sớm hơn một chút.
+# 13 The Weather
+Is it hot in your city?|Thành phố của bạn có nóng không?
+It is warm in spring.|Trời ấm vào mùa xuân.
+It is hot in summer.|Trời nóng vào mùa hè.
+It is cool in autumn.|Trời mát vào mùa thu.
+It is cold in winter.|Trời lạnh vào mùa đông.
+What is your favourite season?|Mùa yêu thích của bạn là gì?
+I like spring best.|Tôi thích mùa xuân nhất.
+The sky is cloudy.|Trời nhiều mây.
+There is a lot of rain today.|Hôm nay trời mưa nhiều.
+Take your umbrella with you.|Hãy mang ô theo.
+Do you think it will rain?|Bạn có nghĩ trời sẽ mưa không?
+I think it will be sunny tomorrow.|Tôi nghĩ ngày mai trời sẽ nắng.
+The weather is lovely today.|Hôm nay thời tiết rất đẹp.
+Let us go for a walk.|Chúng ta hãy đi dạo.
+I do not like very hot weather.|Tôi không thích thời tiết quá nóng.
+How cold is it outside?|Bên ngoài lạnh đến mức nào?
+It is about ten degrees.|Nhiệt độ khoảng mười độ.
+There is snow on the mountains.|Có tuyết trên núi.
+The rain is stopping.|Mưa đang tạnh.
+Look at the rainbow!|Nhìn cầu vồng kìa!
+# 14 Hobbies and Free Time
+Do you play a musical instrument?|Bạn có chơi nhạc cụ nào không?
+I play the guitar.|Tôi chơi ghi ta.
+I am learning to play the piano.|Tôi đang học chơi đàn pi a nô.
+I watch films at the weekend.|Tôi xem phim vào cuối tuần.
+What kind of music do you like?|Bạn thích loại nhạc nào?
+I like pop music.|Tôi thích nhạc pop.
+Do you enjoy dancing?|Bạn có thích nhảy không?
+I like drawing pictures.|Tôi thích vẽ tranh.
+I go running in the morning.|Tôi chạy bộ vào buổi sáng.
+My friends and I play badminton.|Tôi và các bạn chơi cầu lông.
+How often do you exercise?|Bạn tập thể dục thường xuyên thế nào?
+I exercise three times a week.|Tôi tập thể dục ba lần một tuần.
+I like spending time outside.|Tôi thích dành thời gian ở ngoài trời.
+I collect postcards.|Tôi sưu tầm bưu thiếp.
+What are you reading?|Bạn đang đọc gì?
+I am reading a short story.|Tôi đang đọc một truyện ngắn.
+Can you teach me to swim?|Bạn có thể dạy tôi bơi không?
+Let us try something new.|Chúng ta hãy thử điều gì đó mới.
+I am not very good at tennis.|Tôi chơi quần vợt chưa giỏi lắm.
+It is fun to learn together.|Học cùng nhau thật vui.
+# 15 Jobs and Workplaces
+Do you like your job?|Bạn có thích công việc của mình không?
+Yes, I enjoy helping people.|Có, tôi thích giúp đỡ mọi người.
+My sister works in a bank.|Chị gái tôi làm việc ở ngân hàng.
+My brother is a chef.|Anh trai tôi là đầu bếp.
+I work from Monday to Friday.|Tôi làm việc từ thứ Hai đến thứ Sáu.
+I do not work on Sundays.|Tôi không làm việc vào Chủ nhật.
+What time is your lunch break?|Giờ nghỉ trưa của bạn là mấy giờ?
+I have lunch at twelve.|Tôi ăn trưa lúc mười hai giờ.
+I work with a small team.|Tôi làm việc trong một nhóm nhỏ.
+Can you help me with this task?|Bạn có thể giúp tôi làm việc này không?
+I need to send an email.|Tôi cần gửi một email.
+We have a meeting at ten.|Chúng tôi có cuộc họp lúc mười giờ.
+The meeting room is upstairs.|Phòng họp ở tầng trên.
+Can I speak to the manager?|Tôi có thể nói chuyện với quản lý không?
+She is busy at the moment.|Hiện tại cô ấy đang bận.
+Please leave a message.|Vui lòng để lại lời nhắn.
+I am on a break.|Tôi đang nghỉ giải lao.
+I have a day off tomorrow.|Ngày mai tôi được nghỉ làm.
+I am looking for a job.|Tôi đang tìm việc.
+I would like to work in a hotel.|Tôi muốn làm việc ở khách sạn.
+# 16 In the Classroom
+What page are we on?|Chúng ta đang học ở trang nào?
+We are on page twelve.|Chúng ta đang ở trang mười hai.
+Please work in pairs.|Vui lòng làm việc theo cặp.
+Take turns asking questions.|Hãy thay phiên nhau đặt câu hỏi.
+Write your answer here.|Viết câu trả lời của bạn ở đây.
+Can I borrow a pen?|Tôi có thể mượn một chiếc bút không?
+Here you are.|Của bạn đây.
+Please look at the board.|Vui lòng nhìn lên bảng.
+Is this answer right?|Câu trả lời này có đúng không?
+Please check your spelling.|Vui lòng kiểm tra chính tả.
+How do you say this in English?|Điều này nói bằng tiếng Anh như thế nào?
+Can you give me an example?|Bạn có thể cho tôi một ví dụ không?
+I have finished the exercise.|Tôi đã làm xong bài tập.
+I need a little more time.|Tôi cần thêm một chút thời gian.
+Let us practise together.|Chúng ta hãy luyện tập cùng nhau.
+Please put your phone away.|Vui lòng cất điện thoại đi.
+What is our homework?|Bài tập về nhà của chúng ta là gì?
+Read the first two pages.|Hãy đọc hai trang đầu tiên.
+When is the next lesson?|Buổi học tiếp theo là khi nào?
+The lesson ends at four.|Buổi học kết thúc lúc bốn giờ.
+# 17 Health and the Body
+What is the matter?|Bạn bị làm sao vậy?
+I have a cold.|Tôi bị cảm.
+I have a cough.|Tôi bị ho.
+My back hurts.|Lưng tôi bị đau.
+My leg hurts.|Chân tôi bị đau.
+I feel dizzy.|Tôi cảm thấy chóng mặt.
+How long have you felt like this?|Bạn cảm thấy như vậy bao lâu rồi?
+Since this morning.|Từ sáng nay.
+Do you have an appointment?|Bạn có lịch hẹn không?
+I have an appointment at two.|Tôi có lịch hẹn lúc hai giờ.
+Please take a seat.|Vui lòng ngồi xuống.
+Can you describe the pain?|Bạn có thể mô tả cơn đau không?
+It hurts when I walk.|Tôi thấy đau khi đi bộ.
+I am allergic to this medicine.|Tôi bị dị ứng với thuốc này.
+Please speak slowly.|Vui lòng nói chậm.
+Where is the pharmacy?|Hiệu thuốc ở đâu?
+Can you write that down?|Bạn có thể viết điều đó ra không?
+I need to call my family.|Tôi cần gọi cho gia đình.
+Thank you for your care.|Cảm ơn bạn đã chăm sóc tôi.
+I am ready to go home.|Tôi đã sẵn sàng về nhà.
+# 18 Feelings and Emotions
+I am excited to see you.|Tôi rất hào hứng khi gặp bạn.
+He looks happy today.|Hôm nay anh ấy trông vui vẻ.
+She feels lonely.|Cô ấy cảm thấy cô đơn.
+I feel nervous before a test.|Tôi thấy lo lắng trước bài kiểm tra.
+It is okay to feel nervous.|Cảm thấy lo lắng là chuyện bình thường.
+I am proud of you.|Tôi tự hào về bạn.
+Are you feeling better?|Bạn có thấy đỡ hơn không?
+I need a quiet moment.|Tôi cần một chút yên tĩnh.
+Would you like some company?|Bạn có muốn có người ở bên không?
+Thank you for listening.|Cảm ơn bạn đã lắng nghe.
+I am surprised by the news.|Tôi ngạc nhiên trước tin đó.
+I feel calm now.|Bây giờ tôi cảm thấy bình tĩnh.
+Music helps me relax.|Âm nhạc giúp tôi thư giãn.
+A walk makes me feel good.|Đi bộ khiến tôi thấy dễ chịu.
+I am angry about the mistake.|Tôi tức giận về sai sót đó.
+Let us take a short break.|Chúng ta hãy nghỉ một lát.
+You look tired.|Bạn trông mệt mỏi.
+I did not sleep well.|Tôi ngủ không ngon.
+I hope you feel better soon.|Tôi hy vọng bạn sớm thấy đỡ hơn.
+It is good to talk to you.|Thật tốt khi được nói chuyện với bạn.
+# 19 Weekend Plans
+Do you have any plans for Sunday?|Bạn có kế hoạch gì cho Chủ nhật không?
+I am going to stay at home.|Tôi định ở nhà.
+We are going to watch a film.|Chúng tôi định xem phim.
+Would you like to come with us?|Bạn có muốn đi cùng chúng tôi không?
+I would love to.|Tôi rất muốn.
+Sorry, I am busy that day.|Xin lỗi, hôm đó tôi bận.
+How about next weekend?|Cuối tuần sau thì sao?
+That works for me.|Như vậy phù hợp với tôi.
+Where shall we meet?|Chúng ta gặp nhau ở đâu?
+Let us meet outside the cafe.|Chúng ta hãy gặp nhau bên ngoài quán cà phê.
+Can you bring some water?|Bạn có thể mang theo ít nước không?
+I will bring some food.|Tôi sẽ mang theo ít đồ ăn.
+What time are we leaving?|Chúng ta khởi hành lúc mấy giờ?
+We are leaving at eight.|Chúng ta khởi hành lúc tám giờ.
+I am going to visit a museum.|Tôi định đến thăm bảo tàng.
+The museum is open on Saturday.|Bảo tàng mở cửa vào thứ Bảy.
+Let us check the weather.|Chúng ta hãy xem thời tiết.
+Can we change the time?|Chúng ta có thể đổi giờ không?
+Please let me know.|Vui lòng báo cho tôi biết.
+I am looking forward to it.|Tôi đang rất mong chờ điều đó.
+# 20 Travel Essentials
+Is this the queue for check-in?|Đây có phải hàng chờ làm thủ tục không?
+Can I see your passport?|Cho tôi xem hộ chiếu của bạn được không?
+Here is my passport.|Đây là hộ chiếu của tôi.
+Do you have any bags to check in?|Bạn có hành lý nào cần ký gửi không?
+This is my hand luggage.|Đây là hành lý xách tay của tôi.
+Can I have a window seat?|Tôi có thể ngồi cạnh cửa sổ không?
+Where is the departure gate?|Cửa khởi hành ở đâu?
+Is the flight on time?|Chuyến bay có đúng giờ không?
+The flight is delayed.|Chuyến bay bị hoãn.
+What time does boarding start?|Mấy giờ bắt đầu lên máy bay?
+Please keep your ticket ready.|Vui lòng chuẩn bị sẵn vé.
+Where is passport control?|Khu kiểm soát hộ chiếu ở đâu?
+How long are you staying?|Bạn sẽ ở lại bao lâu?
+I am staying for one week.|Tôi sẽ ở lại một tuần.
+I am staying at a hotel.|Tôi sẽ ở khách sạn.
+Where can I change money?|Tôi có thể đổi tiền ở đâu?
+My suitcase is missing.|Va li của tôi bị thất lạc.
+It is a large black suitcase.|Đó là một chiếc va li lớn màu đen.
+Can you help me find it?|Bạn có thể giúp tôi tìm nó không?
+I need a taxi to the hotel.|Tôi cần taxi đến khách sạn.
+# 21 At a Hotel
+Can I check in now?|Tôi có thể nhận phòng bây giờ không?
+The reservation is under my name.|Phòng được đặt dưới tên của tôi.
+Can I see your ID, please?|Cho tôi xem giấy tờ tùy thân được không?
+Here is my ID.|Đây là giấy tờ tùy thân của tôi.
+Your room is on the third floor.|Phòng của bạn ở tầng ba.
+Where is the lift?|Thang máy ở đâu?
+Can someone help with my bags?|Có ai giúp tôi mang hành lý được không?
+The room is very comfortable.|Phòng rất thoải mái.
+Can I have another towel?|Cho tôi thêm một chiếc khăn được không?
+There is no hot water.|Không có nước nóng.
+The key does not work.|Chìa khóa không dùng được.
+Can I change rooms?|Tôi có thể đổi phòng không?
+Is there a restaurant in the hotel?|Khách sạn có nhà hàng không?
+Can you book a taxi for me?|Bạn có thể đặt taxi giúp tôi không?
+What time is check-out?|Giờ trả phòng là mấy giờ?
+Can I leave my luggage here?|Tôi có thể gửi hành lý ở đây không?
+Can I stay one more night?|Tôi có thể ở thêm một đêm không?
+How much is the room per night?|Giá phòng mỗi đêm là bao nhiêu?
+Thank you for a pleasant stay.|Cảm ơn bạn vì kỳ nghỉ dễ chịu.
+I enjoyed staying here.|Tôi rất thích thời gian ở đây.
+# 22 Asking for Help
+Could you speak more slowly?|Bạn có thể nói chậm hơn không?
+I need some help with this form.|Tôi cần giúp điền mẫu đơn này.
+What should I write here?|Tôi nên viết gì ở đây?
+Where can I get help?|Tôi có thể tìm sự giúp đỡ ở đâu?
+I have lost my wallet.|Tôi bị mất ví.
+Is there a lost property office?|Ở đây có phòng giữ đồ thất lạc không?
+Please wait a moment.|Vui lòng chờ một lát.
+Can you show me the way?|Bạn có thể chỉ đường cho tôi không?
+I cannot open this door.|Tôi không mở được cửa này.
+Can you carry this bag for me?|Bạn có thể mang giúp tôi chiếc túi này không?
+I need to charge my phone.|Tôi cần sạc điện thoại.
+Do you have a charger?|Bạn có bộ sạc không?
+Can I sit here for a moment?|Tôi có thể ngồi đây một lát không?
+Please stay with me.|Vui lòng ở lại với tôi.
+I need to contact the police.|Tôi cần liên hệ với cảnh sát.
+Please call an ambulance.|Vui lòng gọi xe cứu thương.
+Can you tell me your location?|Bạn có thể cho tôi biết vị trí của bạn không?
+I am outside the main entrance.|Tôi đang ở bên ngoài lối vào chính.
+Help is on the way.|Người hỗ trợ đang đến.
+I really appreciate your help.|Tôi rất biết ơn sự giúp đỡ của bạn.

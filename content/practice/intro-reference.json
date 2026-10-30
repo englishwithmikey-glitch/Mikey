@@ -1,0 +1,551 @@
+{
+  "course": "Basic Communication A1",
+  "lesson": "Introducing Yourself",
+  "status": "expanded_draft_30_sentences_not_synced_to_supabase",
+  "accent": "en-GB",
+  "steps": [
+    "LEARN",
+    "LISTEN",
+    "TYPE",
+    "SPEAK",
+    "REVIEW"
+  ],
+  "sentences": [
+    {
+      "order": 1,
+      "text": "Hello!",
+      "translation_vi": "Xin chào!",
+      "ipa": "/həˈləʊ/",
+      "pronunciation_focus": "Stress the second syllable.",
+      "speaking_task": "Say hello to a new classmate.",
+      "sample_response": "Hello! Nice to meet you.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 2,
+      "text": "Hi, my name is Anna.",
+      "translation_vi": "Chào, tôi tên là Anna.",
+      "ipa": "/haɪ maɪ neɪm ɪz ˈænə/",
+      "pronunciation_focus": "Link name‿is.",
+      "speaking_task": "Replace Anna with your name.",
+      "sample_response": "Hi, my name is Minh.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 3,
+      "text": "What is your name?",
+      "translation_vi": "Bạn tên là gì?",
+      "ipa": "/wɒt ɪz jɔː neɪm/",
+      "pronunciation_focus": "Link what‿is; falling tone is possible.",
+      "speaking_task": "Ask a partner their name.",
+      "sample_response": "What is your name?",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 4,
+      "text": "You can call me Anna.",
+      "translation_vi": "Bạn có thể gọi tôi là Anna.",
+      "ipa": "/juː kən kɔːl mi ˈænə/",
+      "pronunciation_focus": "Weak form /kən/ in can.",
+      "speaking_task": "Give your preferred name.",
+      "sample_response": "You can call me Mikey.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 5,
+      "text": "Nice to meet you.",
+      "translation_vi": "Rất vui được gặp bạn.",
+      "ipa": "/naɪs tə miːt juː/",
+      "pronunciation_focus": "Weak to /tə/; link meet‿you.",
+      "speaking_task": "Greet someone for the first time.",
+      "sample_response": "Nice to meet you, too.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 6,
+      "text": "Nice to meet you, too.",
+      "translation_vi": "Tôi cũng rất vui được gặp bạn.",
+      "ipa": "/naɪs tə miːt juː tuː/",
+      "pronunciation_focus": "Stress too for reciprocity.",
+      "speaking_task": "Reply to a greeting.",
+      "sample_response": "Nice to meet you, too.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 7,
+      "text": "How are you?",
+      "translation_vi": "Bạn khỏe không?",
+      "ipa": "/haʊ ɑː juː/",
+      "pronunciation_focus": "Link how‿are; smooth rhythm.",
+      "speaking_task": "Ask about someone’s wellbeing.",
+      "sample_response": "How are you today?",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 8,
+      "text": "I am fine, thank you.",
+      "translation_vi": "Tôi khỏe, cảm ơn bạn.",
+      "ipa": "/aɪ æm faɪn θæŋk juː/",
+      "pronunciation_focus": "Practise /θ/ in thank.",
+      "speaking_task": "Answer politely.",
+      "sample_response": "I am fine, thank you.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 9,
+      "text": "Where are you from?",
+      "translation_vi": "Bạn đến từ đâu?",
+      "ipa": "/weə ɑː juː frɒm/",
+      "pronunciation_focus": "Stress where and from.",
+      "speaking_task": "Ask about hometown or country.",
+      "sample_response": "Where are you from?",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 10,
+      "text": "I am from Vietnam.",
+      "translation_vi": "Tôi đến từ Việt Nam.",
+      "ipa": "/aɪ æm frɒm ˌvjetˈnæm/",
+      "pronunciation_focus": "Stress final syllable in Vietnam (common English pronunciation).",
+      "speaking_task": "Say where you are from.",
+      "sample_response": "I am from Vietnam.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 11,
+      "text": "I live in Da Nang.",
+      "translation_vi": "Tôi sống ở Đà Nẵng.",
+      "ipa": "/aɪ lɪv ɪn dɑː ˈnæŋ/",
+      "pronunciation_focus": "Link live‿in.",
+      "speaking_task": "Say where you live.",
+      "sample_response": "I live in Hanoi.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 12,
+      "text": "Where do you live?",
+      "translation_vi": "Bạn sống ở đâu?",
+      "ipa": "/weə də juː lɪv/",
+      "pronunciation_focus": "Weak do /də/.",
+      "speaking_task": "Ask a classmate about their city.",
+      "sample_response": "Where do you live?",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 13,
+      "text": "I am twenty years old.",
+      "translation_vi": "Tôi 20 tuổi.",
+      "ipa": "/aɪ æm ˈtwenti jɪəz əʊld/",
+      "pronunciation_focus": "Link years‿old.",
+      "speaking_task": "Change the age to your own.",
+      "sample_response": "I am thirty years old.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 14,
+      "text": "How old are you?",
+      "translation_vi": "Bạn bao nhiêu tuổi?",
+      "ipa": "/haʊ əʊld ɑː juː/",
+      "pronunciation_focus": "Link old‿are.",
+      "speaking_task": "Ask about age when appropriate.",
+      "sample_response": "How old are you?",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 15,
+      "text": "I am a student.",
+      "translation_vi": "Tôi là sinh viên/học sinh.",
+      "ipa": "/aɪ æm ə ˈstjuːdənt/",
+      "pronunciation_focus": "Weak article a /ə/.",
+      "speaking_task": "Describe your role.",
+      "sample_response": "I am a teacher.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 16,
+      "text": "What do you do?",
+      "translation_vi": "Bạn làm nghề gì?",
+      "ipa": "/wɒt də juː duː/",
+      "pronunciation_focus": "Contrast weak do /də/ and main do /duː/.",
+      "speaking_task": "Ask someone about their job.",
+      "sample_response": "What do you do?",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 17,
+      "text": "I work in an office.",
+      "translation_vi": "Tôi làm việc tại văn phòng.",
+      "ipa": "/aɪ wɜːk ɪn ən ˈɒfɪs/",
+      "pronunciation_focus": "Link work‿in; weak an /ən/.",
+      "speaking_task": "Describe your workplace.",
+      "sample_response": "I work in a school.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 18,
+      "text": "I like listening to music.",
+      "translation_vi": "Tôi thích nghe nhạc.",
+      "ipa": "/aɪ laɪk ˈlɪsənɪŋ tə ˈmjuːzɪk/",
+      "pronunciation_focus": "Silent t in listening; weak to /tə/.",
+      "speaking_task": "Talk about a hobby.",
+      "sample_response": "I like reading books.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 19,
+      "text": "What do you like doing?",
+      "translation_vi": "Bạn thích làm gì?",
+      "ipa": "/wɒt də juː laɪk ˈduːɪŋ/",
+      "pronunciation_focus": "Stress like and doing.",
+      "speaking_task": "Ask about hobbies.",
+      "sample_response": "What do you like doing?",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 20,
+      "text": "It was nice talking to you.",
+      "translation_vi": "Rất vui được trò chuyện với bạn.",
+      "ipa": "/ɪt wəz naɪs ˈtɔːkɪŋ tə juː/",
+      "pronunciation_focus": "Weak was /wəz/ and to /tə/.",
+      "speaking_task": "End a short introduction politely.",
+      "sample_response": "It was nice talking to you.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalize it."
+    },
+    {
+      "order": 21,
+      "text": "I am twenty-five years old.",
+      "translation_vi": "Tôi 25 tuổi.",
+      "ipa": "/aɪ əm ˌtwenti ˈfaɪv jɪəz əʊld/",
+      "pronunciation_focus": "Weak form of am; link years‿old.",
+      "speaking_task": "Change the age to your own.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    },
+    {
+      "order": 22,
+      "text": "I am a university student.",
+      "translation_vi": "Tôi là sinh viên đại học.",
+      "ipa": "/aɪ əm ə ˌjuːnɪˈvɜːsəti ˈstjuːdənt/",
+      "pronunciation_focus": "Weak article a; stress student.",
+      "speaking_task": "Replace student with your job.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    },
+    {
+      "order": 23,
+      "text": "I work in an office.",
+      "translation_vi": "Tôi làm việc tại văn phòng.",
+      "ipa": "/aɪ wɜːk ɪn ən ˈɒfɪs/",
+      "pronunciation_focus": "Link work‿in and an‿office.",
+      "speaking_task": "Say where you work.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    },
+    {
+      "order": 24,
+      "text": "I study English every day.",
+      "translation_vi": "Tôi học tiếng Anh mỗi ngày.",
+      "ipa": "/aɪ ˈstʌdi ˈɪŋɡlɪʃ ˈevri deɪ/",
+      "pronunciation_focus": "Stress English and day.",
+      "speaking_task": "Say how often you study English.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    },
+    {
+      "order": 25,
+      "text": "I like reading books.",
+      "translation_vi": "Tôi thích đọc sách.",
+      "ipa": "/aɪ laɪk ˈriːdɪŋ bʊks/",
+      "pronunciation_focus": "Keep the final /ks/ in books.",
+      "speaking_task": "Replace reading books with a hobby.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    },
+    {
+      "order": 26,
+      "text": "In my free time, I listen to music.",
+      "translation_vi": "Lúc rảnh, tôi nghe nhạc.",
+      "ipa": "/ɪn maɪ friː taɪm aɪ ˈlɪsən tə ˈmjuːzɪk/",
+      "pronunciation_focus": "Silent t in listen; weak to /tə/.",
+      "speaking_task": "Talk about your free-time activity.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    },
+    {
+      "order": 27,
+      "text": "I have one older brother.",
+      "translation_vi": "Tôi có một anh trai.",
+      "ipa": "/aɪ hæv wʌn ˈəʊldə ˈbrʌðə/",
+      "pronunciation_focus": "Practise /ð/ in brother.",
+      "speaking_task": "Describe a family member.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    },
+    {
+      "order": 28,
+      "text": "I am learning English for work.",
+      "translation_vi": "Tôi đang học tiếng Anh để phục vụ công việc.",
+      "ipa": "/aɪ əm ˈlɜːnɪŋ ˈɪŋɡlɪʃ fə wɜːk/",
+      "pronunciation_focus": "Weak for /fə/; stress learning and work.",
+      "speaking_task": "Give your reason for learning English.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    },
+    {
+      "order": 29,
+      "text": "Could you tell me a little about yourself?",
+      "translation_vi": "Bạn có thể giới thiệu đôi chút về bản thân không?",
+      "ipa": "/kʊd juː tel mi ə ˈlɪtəl əˈbaʊt jɔːˈself/",
+      "pronunciation_focus": "Link tell‿me; stress yourself.",
+      "speaking_task": "Ask a new classmate this question.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    },
+    {
+      "order": 30,
+      "text": "It was nice talking to you.",
+      "translation_vi": "Rất vui được trò chuyện với bạn.",
+      "ipa": "/ɪt wəz naɪs ˈtɔːkɪŋ tə juː/",
+      "pronunciation_focus": "Weak was /wəz/ and to /tə/.",
+      "speaking_task": "End a short introduction politely.",
+      "sample_response": "Personalise this sentence with true information.",
+      "listening_task": "Listen twice; identify stressed words; repeat.",
+      "typing_task": "Listen without text and type the exact sentence.",
+      "review_prompt": "Say the sentence from the Vietnamese cue; then personalise it."
+    }
+  ],
+  "version": "1.1",
+  "sentence_count": 30,
+  "conversations": [
+    {
+      "id": 1,
+      "title": "Meeting a new classmate",
+      "level": "Guided",
+      "turns": [
+        [
+          "Anna",
+          "Hi! My name is Anna. What is your name?",
+          "Chào! Mình tên Anna. Bạn tên gì?"
+        ],
+        [
+          "Minh",
+          "Hello! My name is Minh. Nice to meet you.",
+          "Xin chào! Mình tên Minh. Rất vui được gặp bạn."
+        ],
+        [
+          "Anna",
+          "Nice to meet you, too. Where are you from?",
+          "Mình cũng rất vui được gặp bạn. Bạn đến từ đâu?"
+        ],
+        [
+          "Minh",
+          "I am from Vietnam. How about you?",
+          "Mình đến từ Việt Nam. Còn bạn?"
+        ],
+        [
+          "Anna",
+          "I am from Australia. Do you live here?",
+          "Mình đến từ Úc. Bạn sống ở đây à?"
+        ],
+        [
+          "Minh",
+          "Yes, I live in Da Nang.",
+          "Đúng vậy, mình sống ở Đà Nẵng."
+        ],
+        [
+          "Anna",
+          "What do you do?",
+          "Bạn làm nghề gì?"
+        ],
+        [
+          "Minh",
+          "I am a university student.",
+          "Mình là sinh viên đại học."
+        ]
+      ],
+      "challenge": "Replace names, countries, cities and occupations."
+    },
+    {
+      "id": 2,
+      "title": "Getting to know a new colleague",
+      "level": "Supported role-play",
+      "turns": [
+        [
+          "Linh",
+          "Hello! I am Linh. You can call me Linh.",
+          "Xin chào! Tôi là Linh. Bạn có thể gọi tôi là Linh."
+        ],
+        [
+          "Ben",
+          "Hi, Linh. I am Ben. Nice to meet you.",
+          "Chào Linh. Tôi là Ben. Rất vui được gặp bạn."
+        ],
+        [
+          "Linh",
+          "Nice to meet you, too. Where do you work?",
+          "Tôi cũng rất vui được gặp bạn. Bạn làm ở đâu?"
+        ],
+        [
+          "Ben",
+          "I work in an office. How about you?",
+          "Tôi làm việc ở văn phòng. Còn bạn?"
+        ],
+        [
+          "Linh",
+          "I work here, too. What do you do in your free time?",
+          "Tôi cũng làm ở đây. Lúc rảnh bạn thường làm gì?"
+        ],
+        [
+          "Ben",
+          "I like reading books and listening to music.",
+          "Tôi thích đọc sách và nghe nhạc."
+        ],
+        [
+          "Linh",
+          "That sounds nice!",
+          "Nghe hay đấy!"
+        ],
+        [
+          "Ben",
+          "It was nice talking to you.",
+          "Rất vui được trò chuyện với bạn."
+        ]
+      ],
+      "challenge": "Hide the Ben lines, then reply naturally using your own information."
+    },
+    {
+      "id": 3,
+      "title": "Introducing yourself at an English club",
+      "level": "Free speaking",
+      "turns": [
+        [
+          "Host",
+          "Welcome! Could you tell me a little about yourself?",
+          "Chào mừng bạn! Bạn có thể giới thiệu đôi chút về bản thân không?"
+        ],
+        [
+          "Mai",
+          "Sure! My name is Mai. I am twenty-five years old.",
+          "Được chứ! Tôi tên Mai. Tôi 25 tuổi."
+        ],
+        [
+          "Host",
+          "Where are you from?",
+          "Bạn đến từ đâu?"
+        ],
+        [
+          "Mai",
+          "I am from Hue, but I live in Da Nang.",
+          "Tôi đến từ Huế nhưng sống ở Đà Nẵng."
+        ],
+        [
+          "Host",
+          "Why are you learning English?",
+          "Tại sao bạn học tiếng Anh?"
+        ],
+        [
+          "Mai",
+          "I am learning English for work.",
+          "Tôi học tiếng Anh để phục vụ công việc."
+        ],
+        [
+          "Host",
+          "What do you like doing in your free time?",
+          "Bạn thích làm gì lúc rảnh?"
+        ],
+        [
+          "Mai",
+          "In my free time, I listen to music.",
+          "Lúc rảnh tôi nghe nhạc."
+        ],
+        [
+          "Host",
+          "Thank you, Mai!",
+          "Cảm ơn Mai!"
+        ],
+        [
+          "Mai",
+          "Thank you. It was nice talking to you.",
+          "Cảm ơn. Rất vui được trò chuyện với bạn."
+        ]
+      ],
+      "challenge": "Introduce yourself for 45–60 seconds without reading the script."
+    }
+  ],
+  "speaking_challenges": [
+    {
+      "id": 1,
+      "name": "Personalise",
+      "instruction": "Replace the sample name, age, city, job and hobbies with your own information."
+    },
+    {
+      "id": 2,
+      "name": "Role reversal",
+      "instruction": "Practise each conversation twice, switching speakers."
+    },
+    {
+      "id": 3,
+      "name": "60-second introduction",
+      "instruction": "Introduce yourself for 45–60 seconds; include name, hometown, occupation, hobby and English-learning goal."
+    }
+  ],
+  "integration_note": "Do not overwrite existing Supabase sentence IDs or learning_progress. Match existing content and migrate with a reviewed mapping first."
+}

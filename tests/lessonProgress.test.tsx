@@ -71,3 +71,16 @@ it('plays embedded sample lessons without sending string IDs to Supabase', async
   expect(mock.save).not.toHaveBeenCalled();
   expect(container.textContent).toContain('không đồng bộ tiến độ hoặc cộng XP');
 });
+
+it('does not navigate or complete the lesson while typing an answer', async () => {
+  const typingTab = [...container.querySelectorAll('button')].find(button => button.textContent === '3. Nghe & gõ')!;
+  await act(async () => typingTab.click());
+  const textarea = container.querySelector('textarea')!;
+  const space = new KeyboardEvent('keydown', { key: ' ', bubbles: true, cancelable: true });
+  await act(async () => {
+    textarea.dispatchEvent(space);
+    textarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
+  });
+  expect(space.defaultPrevented).toBe(false);
+  expect(mock.save).not.toHaveBeenCalled();
+});

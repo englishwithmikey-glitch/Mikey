@@ -1,0 +1,140 @@
+# 3
+What is your mother's name?|Mẹ bạn tên gì?|14
+How old is your father?|Bố bạn bao nhiêu tuổi?|16
+Where do your parents live?|Bố mẹ bạn sống ở đâu?|19
+When do you visit your grandparents?|Khi nào bạn đến thăm ông bà?|20
+Who is that boy?|Cậu bé kia là ai?|26
+What does your uncle do?|Chú bạn làm nghề gì?|30
+# 4
+Where is your house?|Nhà bạn ở đâu?|12
+How many bedrooms are there?|Có bao nhiêu phòng ngủ?|2
+Where is the bathroom?|Phòng tắm ở đâu?|5
+Where are my shoes?|Giày của tôi ở đâu?|22
+Where is the sofa?|Ghế sofa ở đâu?|23
+When do you clean your room?|Khi nào bạn dọn phòng?|26
+# 5
+How old are you?|Bạn bao nhiêu tuổi?|2
+How old is your brother?|Em trai bạn bao nhiêu tuổi?|12
+How many people are there?|Có bao nhiêu người?|16
+How many chairs do we need?|Chúng ta cần bao nhiêu ghế?|18
+When is your birthday?|Sinh nhật bạn vào tháng nào?|28
+How many days are there in a week?|Một tuần có bao nhiêu ngày?|24
+# 6
+What time is it?|Bây giờ là mấy giờ?|2
+What day is it today?|Hôm nay là thứ mấy?|5
+What time do you start work?|Bạn bắt đầu làm lúc mấy giờ?|16
+What time does the shop close?|Cửa hàng đóng cửa lúc mấy giờ?|18
+When is the meeting?|Khi nào có cuộc họp?|21
+When can we meet?|Khi nào chúng ta có thể gặp nhau?|30
+# 7
+What is your favourite food?|Món yêu thích của bạn là gì?|12
+Do you like coffee or tea?|Bạn thích cà phê hay trà?|5
+Would you like some juice?|Bạn có muốn nước ép không?|8
+Would you like an apple or a banana?|Bạn muốn táo hay chuối?|18
+Do you take sugar in your coffee?|Bạn có uống cà phê với đường không?|27
+Would you like some more food?|Bạn có muốn thêm đồ ăn không?|30
+# 8
+Do you have a reservation?|Bạn đã đặt bàn chưa?|12
+Are you ready to order?|Bạn sẵn sàng gọi món chưa?|15
+What do you recommend?|Bạn gợi ý món gì?|17
+What would you like to drink?|Bạn muốn uống gì?|6
+How long will it take?|Mất bao lâu?|25
+How was the food?|Đồ ăn thế nào?|9
+# 9
+How much is this bag?|Túi này giá bao nhiêu?|2
+Would you like to buy it?|Bạn muốn mua nó không?|19
+What are you looking for?|Bạn đang tìm gì?|12
+How would you like to pay?|Bạn muốn trả bằng cách nào?|8
+What time do you open?|Cửa hàng mở cửa lúc mấy giờ?|24
+Do you need a bag?|Bạn có cần túi không?|26
+# 10
+What colour do you like?|Bạn thích màu gì?|4
+What size do you need?|Bạn cần cỡ nào?|6
+What are you wearing today?|Hôm nay bạn mặc gì?|12
+Do these shoes fit?|Đôi giày này có vừa không?|9
+Do you like your new jacket?|Bạn thích áo khoác mới không?|25
+What do you wear at work?|Bạn mặc gì khi làm việc?|26
+# 11
+Excuse me, where is the bank?|Xin lỗi, ngân hàng ở đâu?|5
+Is it far from here?|Có xa đây không?|8
+How far is the station?|Nhà ga cách đây bao xa?|24
+Where is the station?|Nhà ga ở đâu?|16
+Which floor is the office on?|Văn phòng ở tầng mấy?|30
+Where is the lift?|Thang máy ở đâu?|28
+# 12
+How do you get to work?|Bạn đi làm bằng cách nào?|1
+How long does the journey take?|Chuyến đi mất bao lâu?|15
+Which bus should I take?|Tôi nên đi xe buýt nào?|21
+When does the next bus come?|Khi nào xe buýt tiếp theo đến?|22
+Is this seat free?|Chỗ ngồi này có trống không?|19
+Where would you like to get off?|Bạn muốn xuống ở đâu?|10
+# 13
+What is the weather like today?|Hôm nay thời tiết thế nào?|2
+What is your favourite season?|Mùa yêu thích của bạn là gì?|17
+How cold is it outside?|Bên ngoài lạnh thế nào?|27
+What is winter like here?|Mùa đông ở đây thế nào?|15
+Do you think it will rain tomorrow?|Bạn nghĩ ngày mai có mưa không?|22
+What shall we do today?|Hôm nay chúng ta làm gì?|24
+# 14
+What do you do in your free time?|Bạn làm gì lúc rảnh?|2
+What kind of music do you like?|Bạn thích loại nhạc nào?|16
+Do you play a musical instrument?|Bạn có chơi nhạc cụ không?|12
+How often do you exercise?|Bạn tập thể dục thường xuyên thế nào?|22
+What are you reading?|Bạn đang đọc gì?|26
+Can you swim?|Bạn có biết bơi không?|7
+# 15
+What do you do?|Bạn làm nghề gì?|2
+Where do you work?|Bạn làm việc ở đâu?|6
+What time do you start work?|Bạn bắt đầu làm lúc mấy giờ?|8
+What time do you finish work?|Bạn kết thúc lúc mấy giờ?|9
+Can I speak to the manager?|Tôi gặp quản lý được không?|25
+What would you like to do in the future?|Sau này bạn muốn làm công việc gì?|30
+# 16
+What page are we on?|Chúng ta đang ở trang nào?|12
+What should we do next?|Tiếp theo chúng ta nên làm gì?|13
+Are you ready to move on?|Bạn sẵn sàng chuyển tiếp chưa?|24
+What do you need?|Bạn cần gì?|22
+What is our homework?|Bài tập về nhà là gì?|28
+What time does the lesson end?|Buổi học kết thúc lúc mấy giờ?|30
+# 17
+What is the matter?|Bạn bị làm sao?|2
+How long have you felt like this?|Bạn bị như vậy bao lâu?|18
+Do you have an appointment?|Bạn có lịch hẹn không?|20
+What do you need?|Bạn cần gì?|8
+Can you describe the pain?|Bạn mô tả cơn đau được không?|23
+How do you feel now?|Bây giờ bạn cảm thấy thế nào?|10
+# 18
+How do you feel today?|Hôm nay bạn cảm thấy thế nào?|2
+Are you worried about anything?|Bạn có lo lắng điều gì không?|5
+You look tired. Are you okay?|Bạn trông mệt. Bạn ổn không?|28
+What helps you relax?|Điều gì giúp bạn thư giãn?|23
+How do you feel now?|Bây giờ bạn cảm thấy thế nào?|22
+Would you like to say anything else?|Bạn muốn nói thêm gì không?|20
+# 19
+What are you going to do this weekend?|Bạn định làm gì cuối tuần?|2
+What are you going to do together?|Mọi người định làm gì cùng nhau?|3
+Where shall we meet?|Chúng ta gặp ở đâu?|20
+What time shall we meet?|Chúng ta gặp lúc mấy giờ?|8
+Would you like to come with us?|Bạn muốn đi cùng không?|15
+What time are we leaving?|Chúng ta đi lúc mấy giờ?|24
+# 20
+Can I see your passport?|Cho tôi xem hộ chiếu được không?|13
+How many suitcases do you have?|Bạn có mấy va li?|5
+How long are you staying?|Bạn ở lại bao lâu?|24
+Where are you staying?|Bạn ở đâu trong chuyến đi?|25
+What is the problem?|Có vấn đề gì vậy?|27
+Can you describe your suitcase?|Bạn mô tả va li được không?|28
+# 21
+Do you have a reservation?|Bạn đã đặt phòng chưa?|1
+Can I see your ID, please?|Cho tôi xem giấy tờ tùy thân được không?|14
+How is your room?|Phòng của bạn thế nào?|18
+Is there a problem?|Có vấn đề gì không?|20
+How can I help you?|Tôi có thể giúp gì cho bạn?|10
+Did you enjoy your stay?|Bạn có thích thời gian ở đây không?|30
+# 22
+What is the problem?|Có vấn đề gì vậy?|2
+What do you need help with?|Bạn cần giúp việc gì?|12
+What do you need?|Bạn cần gì?|21
+Where are you now?|Bây giờ bạn đang ở đâu?|28
+How can I help?|Tôi giúp gì được?|26
+Is there anything else you need?|Bạn còn cần gì nữa không?|24
