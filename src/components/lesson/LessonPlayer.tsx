@@ -37,6 +37,7 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
 }) => {
   const { user, markLessonComplete, isLessonCompleted } = useAuth();
   const { lang, t } = useLanguage();
+  const isLocalLesson = 'sentences' in lesson;
 
   // State
   const [sentences, setSentences] = useState<DbSentence[]>([]);
@@ -66,7 +67,12 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
     setSaveError(null);
     setIsSavingProgress(false);
     savingRef.current = false;
-    const { data, error } = await fetchSupabaseSentences(lesson.id);
+    const { data, error } = isLocalLesson
+      ? { data: lesson.sentences.map((sentence, index): DbSentence => ({
+          id: sentence.id, lesson_id: lesson.id, english: sentence.en,
+          vietnamese: sentence.vi, sentence_order: index + 1, context_of_use: sentence.context,
+        })), error: null }
+      : await fetchSupabaseSentences(lesson.id);
     setLoading(false);
 
     if (error) {
@@ -132,7 +138,7 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
     setIsSavingProgress(true);
     setSaveError(null);
     try {
-      await markLessonComplete(course.id, lesson.id, 100, 50, sentences.length);
+      if (!isLocalLesson) await markLessonComplete(course.id, lesson.id, 100, 50, sentences.length);
       if (activeLesson.current === key) setIsCompletedState(true);
     } catch (error: any) {
       if (activeLesson.current === key) setSaveError(error?.message || 'Không lưu được tiến độ. Vui lòng thử lại.');
@@ -236,7 +242,7 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
         <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">
-              {course.level || 'A1'} · Supabase Curriculum
+              {course.level || 'A1'} · {isLocalLesson ? 'Bài học mẫu' : 'Supabase Curriculum'}
             </span>
             <span className="text-xs font-mono text-slate-400">
               Tổng số: {sentences.length} mẫu câu
@@ -534,7 +540,7 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
               Chúc mừng! Bạn đã hoàn thành toàn bộ {sentences.length} mẫu câu của bài học!
             </h3>
             <p className="text-xs text-emerald-200 max-w-md mx-auto">
-              {user?.id.startsWith('guest-') ? 'Tiến độ trải nghiệm đã được lưu trên trình duyệt này.' : 'Tiến độ của bạn đã được lưu vào tài khoản.'}
+              {isLocalLesson ? 'Bạn đã hoàn thành bài học mẫu. Bài này không đồng bộ tiến độ hoặc cộng XP vào tài khoản.' : user?.id.startsWith('guest-') ? 'Tiến độ trải nghiệm đã được lưu trên trình duyệt này.' : 'Tiến độ của bạn đã được lưu vào tài khoản.'}
             </p>
             <button
               onClick={() => {

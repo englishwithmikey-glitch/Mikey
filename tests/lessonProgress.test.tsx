@@ -57,3 +57,17 @@ it('shows save errors and supports retry without claiming success', async () => 
   expect(container.querySelector('[role="alert"]')).toBeNull();
   expect(container.textContent).toContain('Chúc mừng!');
 });
+
+it('plays embedded sample lessons without sending string IDs to Supabase', async () => {
+  mock.sentences.mockClear();
+  await act(async () => root.render(<LanguageProvider><LessonPlayer
+    course={{ id: 'course-gen', level: 'Beginner' } as any}
+    lesson={{ id: 'lesson-gen-1', title: 'Sample', sentences: [{ id: 's1', en: 'Sample sentence', vi: 'Câu mẫu' }] } as any}
+    onBack={vi.fn()}
+  /></LanguageProvider>));
+  expect(container.textContent).toContain('Sample sentence');
+  expect(mock.sentences).not.toHaveBeenCalled();
+  await act(async () => button('Hoàn Thành Bài Học').click());
+  expect(mock.save).not.toHaveBeenCalled();
+  expect(container.textContent).toContain('không đồng bộ tiến độ hoặc cộng XP');
+});
