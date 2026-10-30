@@ -1,9 +1,10 @@
 // @vitest-environment node
-import { mkdtemp, mkdir, writeFile, readFile, rm, lstat } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, readFile, rm, lstat, symlink } from 'node:fs/promises';
+import { pathToFileURL } from 'node:url';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { afterEach, expect, it } from 'vitest';
-import { files, updatePractice } from '../scripts/update-practice-v2.mjs';
+import { files, updatePractice, isMainModule } from '../scripts/update-practice-v2.mjs';
 
 const roots: string[] = [];
 afterEach(async () => { await Promise.all(roots.splice(0).map(root => rm(root, { recursive: true, force: true }))); });
@@ -43,4 +44,17 @@ it('rejects running outside the application and HTTP failures', async () => {
   await expect(updatePractice(dirname(root), fixtureFetch)).rejects.toThrow();
   await expect(updatePractice(root, async () => new Response('', { status: 403 }))).rejects.toThrow('HTTP 403');
   expect(await readFile(join(root, 'src/components/lesson/LessonPlayer.tsx'), 'utf8')).toBe('User original code');
+});
+
+it('recognizes the CLI entry point through a directory alias such as macOS /tmp', async () => {
+  const root = await app();
+  const actual = join(root, 'actual');
+  await mkdir(actual);
+  const file = join(actual, 'updater.mjs');
+  await writeFile(file, 'test');
+  const alias = join(root, 'alias');
+  await symlink(actual, alias, 'dir');
+  expect(await isMainModule(join(alias, 'updater.mjs'), pathToFileURL(file).href)).toBe(true);
+  expect(await isMainModule(join(root, 'package.json'), pathToFileURL(file).href)).toBe(false);
+  expect(await isMainModule(undefined, pathToFileURL(file).href)).toBe(false);
 });

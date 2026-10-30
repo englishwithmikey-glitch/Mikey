@@ -3,7 +3,7 @@
 import { readFile, writeFile, mkdir, rename, rm, copyFile, lstat, realpath, open } from 'node:fs/promises';
 import { createHash, randomUUID } from 'node:crypto';
 import { dirname, join, resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 export const revision = '263e1f4c1a8412279f126d6ac2027d6aef90c1a2';
 export const files = [
   {
@@ -103,7 +103,16 @@ export async function updatePractice(directory, fetchFile = fetch) {
   }
 }
 
-if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) {
+export async function isMainModule(argument, moduleUrl) {
+  if (!argument) return false;
+  try {
+    // macOS /tmp is an alias of /private/tmp. Node resolves the module's path,
+    // while argv can retain the alias used to launch it.
+    return await realpath(resolve(argument)) === await realpath(fileURLToPath(moduleUrl));
+  } catch { return false; }
+}
+
+if (await isMainModule(process.argv[1], import.meta.url)) {
   updatePractice(process.cwd()).then(result => {
     console.log(`Đã cập nhật ${result.updated} file. Bản cũ được giữ tại: ${result.backup}`);
     console.log('Chạy npm run dev, rồi tải lại trang. Dữ liệu Supabase cần nhập SQL v2 riêng.');
