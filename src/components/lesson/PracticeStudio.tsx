@@ -31,8 +31,9 @@ export default function PracticeStudio(props: Props) {
   const [revealed, setRevealed] = useState(false);
   const [results, setResults] = useState<Record<string, boolean>>({});
   const [speakingMode, setSpeakingMode] = useState<'sentence' | 'dialogue'>('sentence');
+  const [slowRate, setSlowRate] = useState(0.5);
   const sentence = sentences[index];
-  const speech = usePracticeSpeech(`${props.scope}:${step}:${index}:${speakingMode}`);
+  const speech = usePracticeSpeech(`${props.scope}:${step}:${index}:${speakingMode}:${slowRate}`);
   const metadata = useMemo(() => pack?.sentences.find(item => normalizeAnswer(item.english) === normalizeAnswer(sentence?.english || '')), [pack, sentence]);
 
   useEffect(() => {
@@ -56,6 +57,14 @@ export default function PracticeStudio(props: Props) {
       <nav className="flex flex-wrap gap-2" aria-label="Các bước luyện tập">
         {steps.map(([id, label]) => <button key={id} onClick={() => onStep(id)} aria-pressed={step === id} className={step === id ? primary : button}>{label}</button>)}
       </nav>
+      {['listen', 'type', 'speak'].includes(step) && <label className="flex flex-wrap items-center gap-3 text-sm text-slate-200">
+        Tốc độ nghe chậm
+        <select aria-label="Tốc độ nghe chậm" value={slowRate} onChange={event => setSlowRate(Number(event.target.value))} className="rounded-xl border border-slate-600 bg-slate-800 p-2">
+          <option value={0.35}>Rất chậm · 0,35</option>
+          <option value={0.5}>Chậm · 0,5</option>
+          <option value={0.65}>Hơi chậm · 0,65</option>
+        </select>
+      </label>}
       {packError && <p role="alert" className="text-amber-300">Chưa tải được bộ hội thoại. Bạn vẫn có thể luyện các câu bên dưới; tải lại trang để thử lại.</p>}
       {step === 'learn' && metadata && (
         <div className="rounded-xl border border-slate-700 bg-slate-900 p-4 space-y-2">
@@ -72,7 +81,9 @@ export default function PracticeStudio(props: Props) {
             <p className="text-slate-300">Nghe hai lần, chú ý từ được nhấn, sau đó nhắc lại.</p>
             <div className="flex flex-wrap gap-2">
               <button className={primary} onClick={() => speech.speak(sentence.english, 1, sentence.audio_url)}>Nghe câu</button>
-              <button className={button} onClick={() => speech.speak(sentence.english, 0.75, sentence.audio_url)}>Nghe chậm</button>
+              <button className={button} onClick={() => speech.speak(sentence.english, slowRate, sentence.audio_url)}>Nghe chậm</button>
+              <button className={button} onClick={() => speech.speakWords(sentence.english, slowRate)}>Nghe tách từng từ</button>
+              <button className={button} onClick={speech.stop}>Dừng nghe</button>
               <button className={button} onClick={() => setRevealed(value => !value)}>{revealed ? 'Ẩn câu' : 'Hiện câu & nghĩa'}</button>
             </div>
             {revealed && <div><p className="text-xl font-bold">{sentence.english}</p><p className="text-emerald-200">{sentence.vietnamese}</p></div>}
@@ -81,7 +92,9 @@ export default function PracticeStudio(props: Props) {
             <h2 className="text-xl font-bold">Nghe và gõ lại câu</h2>
             <div className="flex flex-wrap gap-2">
               <button className={primary} onClick={() => speech.speak(sentence.english, 1, sentence.audio_url)}>Nghe câu</button>
-              <button className={button} onClick={() => speech.speak(sentence.english, 0.75, sentence.audio_url)}>Nghe chậm</button>
+              <button className={button} onClick={() => speech.speak(sentence.english, slowRate, sentence.audio_url)}>Nghe chậm</button>
+              <button className={button} onClick={() => speech.speakWords(sentence.english, slowRate)}>Nghe tách từng từ</button>
+              <button className={button} onClick={speech.stop}>Dừng nghe</button>
             </div>
             <label className="block" htmlFor="dictation-answer">Câu bạn nghe được</label>
             <textarea id="dictation-answer" value={answer} onChange={event => { setAnswer(event.target.value); setChecked(false); }} className="w-full rounded-xl border border-slate-600 bg-slate-950 p-3" autoComplete="off" spellCheck={false} />
@@ -109,7 +122,7 @@ export default function PracticeStudio(props: Props) {
               {speech.transcript && <p role="status">Bản chép lời tự động: {speech.transcript}</p>}
               <button className={button} onClick={() => setRevealed(value => !value)}>Xem/ẩn câu trả lời gợi ý</button>
               {revealed && <p>{metadata?.sample_response || sentence.english}</p>}
-            </> : <ConversationPractice key={props.scope} pack={pack} scope={props.scope} />}
+            </> : <ConversationPractice key={props.scope} pack={pack} scope={props.scope} slowRate={slowRate} />}
             <p className="text-sm text-amber-200">Bản chép lời hỗ trợ tự đối chiếu, không phải điểm phát âm.</p>
           </>}
           {step === 'review' && <>
@@ -134,7 +147,7 @@ export default function PracticeStudio(props: Props) {
   );
 }
 
-function ConversationPractice({ pack, scope }: { pack: PracticePack | null; scope: string }) {
+function ConversationPractice({ pack, scope, slowRate }: { pack: PracticePack | null; scope: string; slowRate: number }) {
   const [dialogueIndex, setDialogueIndex] = useState(0);
   const [mode, setMode] = useState<'guided' | 'roleplay' | 'free'>('guided');
   const [roleIndex, setRoleIndex] = useState(1);
@@ -145,7 +158,7 @@ function ConversationPractice({ pack, scope }: { pack: PracticePack | null; scop
   const dialogue = pack?.conversations[dialogueIndex];
   const roles = [...new Set(dialogue?.turns.map(item => item[0]) || [])];
   const role = roles[roleIndex] || roles[0];
-  const speech = usePracticeSpeech(`${scope}:${dialogueIndex}:${mode}:${role}:${turn}:${promptIndex}`);
+  const speech = usePracticeSpeech(`${scope}:${dialogueIndex}:${mode}:${role}:${turn}:${promptIndex}:${slowRate}`);
   if (!dialogue || !pack) return <p className="text-slate-300">Bài này chưa có bộ hội thoại. Bạn vẫn có thể luyện nói từng câu.</p>;
   const current = dialogue.turns[turn];
   const prompt = pack.free_prompts[promptIndex];
@@ -174,7 +187,8 @@ function ConversationPractice({ pack, scope }: { pack: PracticePack | null; scop
       </div>)}
       <div className="flex flex-wrap gap-2">
         <button className={button} disabled={!current} onClick={() => speech.speak(current[1])}>Nghe lượt hiện tại</button>
-        <button className={button} disabled={!current} onClick={() => speech.speak(current[1], 0.75)}>Nghe lượt chậm</button>
+        <button className={button} disabled={!current} onClick={() => speech.speak(current[1], slowRate)}>Nghe lượt chậm</button>
+        <button className={button} disabled={!current} onClick={() => speech.speakWords(current[1], slowRate)}>Nghe lượt tách từ</button>
         <button className={primary} disabled={!current || current[0] !== role || speech.listening} onClick={speech.startRecognition}>Nói lượt của bạn</button>
         <button className={button} onClick={() => setReveal(value => !value)}>Hiện/ẩn lời thoại</button>
         <button className={primary} disabled={!current} onClick={() => setTurn(value => value + 1)}>Tôi đã luyện xong lượt này →</button>

@@ -5,6 +5,7 @@
 - 20 bài theo chủ đề (Lesson 3–22), mỗi bài 30 câu khác nhau: tổng 600 câu.
 - Mỗi chủ đề có 3 hội thoại ngắn, tổng 60 hội thoại; Lesson 1 có thêm 3 hội thoại dựa trên tài liệu tham khảo.
 - 5 bước: Học → Nghe → Nghe & gõ → Nói → Ôn tập.
+- Nghe chậm mặc định 0,5, chọn thêm mức 0,35 hoặc 0,65; nghe tách từng từ có khoảng nghỉ 600ms, dừng khi chuyển câu hoặc nhấn Dừng.
 - Luyện hội thoại có hướng dẫn, chọn/đổi vai, ẩn lời của người học và nói tự do.
 - IPA Anh–Anh từ tài liệu hoặc được tạo tự động bằng eSpeak NG; UI đánh dấu bản tạo tự động để giáo viên rà soát.
 - Micro chỉ bật khi được bấm, tạo bản chép lời, không chấm điểm phát âm. Trình duyệt không hỗ trợ vẫn có thể tự luyện.

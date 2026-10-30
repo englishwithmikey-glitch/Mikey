@@ -6,12 +6,15 @@ export function usePracticeSpeech(scope: string) {
   const recognition = useRef<any>(null);
   const generation = useRef(0);
   const audio = useRef<HTMLAudioElement | null>(null);
+  const wordPause = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const [message, setMessage] = useState('');
   const [transcript, setTranscript] = useState('');
   const [listening, setListening] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const stop = useCallback(() => {
     generation.current++;
+    clearTimeout(wordPause.current);
+    wordPause.current = undefined;
     recognition.current?.abort();
     recognition.current = null;
     if (audio.current) { audio.current.pause(); audio.current = null; }
@@ -53,6 +56,34 @@ export function usePracticeSpeech(scope: string) {
     setSpeaking(true); void element.play().catch(tts);
   }
 
+  function speakWords(text: string, rate = 0.5) {
+    stop(); setMessage('');
+    if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
+      setMessage('Thiết bị chưa hỗ trợ giọng đọc tách từ. Bạn có thể dùng nút nghe câu.'); return;
+    }
+    const current = generation.current;
+    const words = text.trim().split(/\s+/).filter(Boolean);
+    const voice = window.speechSynthesis.getVoices().find(item => item.lang.toLowerCase() === 'en-gb');
+    let index = 0;
+    const next = () => {
+      if (current !== generation.current) return;
+      if (index >= words.length) { setSpeaking(false); return; }
+      const utterance = new SpeechSynthesisUtterance(words[index++]);
+      utterance.lang = 'en-GB'; utterance.rate = rate;
+      if (voice) utterance.voice = voice;
+      utterance.onend = () => {
+        if (current !== generation.current) return;
+        if (index === words.length) setSpeaking(false);
+        else wordPause.current = setTimeout(next, 600);
+      };
+      utterance.onerror = () => {
+        if (current === generation.current) { stop(); setMessage('Không đọc được từ này. Vui lòng thử lại.'); }
+      };
+      window.speechSynthesis.speak(utterance);
+    };
+    setSpeaking(true); next();
+  }
+
   function startRecognition() {
     stop(); setTranscript(''); setMessage('');
     const BrowserRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -78,5 +109,5 @@ export function usePracticeSpeech(scope: string) {
       setListening(false); setMessage('Không bật được micro. Bạn có thể tự luyện và tiếp tục.');
     }
   }
-  return { speak, stop, startRecognition, speaking, listening, transcript, message };
+  return { speak, speakWords, stop, startRecognition, speaking, listening, transcript, message };
 }

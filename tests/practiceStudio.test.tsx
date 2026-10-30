@@ -53,7 +53,7 @@ beforeEach(async () => {
   container = document.createElement('div'); document.body.append(container); root = createRoot(container);
   await act(async () => root.render(<Studio />));
 });
-afterEach(async () => { await act(async () => root.unmount()); container.remove(); vi.unstubAllGlobals(); });
+afterEach(async () => { await act(async () => root.unmount()); container.remove(); vi.unstubAllGlobals(); vi.useRealTimers(); });
 
 it('shows five learning steps and identifies automatic IPA', () => {
   expect(container.querySelectorAll('nav button')).toHaveLength(5);
@@ -64,7 +64,7 @@ it('hides listening answers until requested and plays slow British speech', asyn
   await click('2. Nghe');
   expect(container.textContent).not.toContain(sentences[0].english);
   await click('Nghe chậm');
-  expect(utterances[0]).toMatchObject({ text: sentences[0].english, rate: 0.75, lang: 'en-GB' });
+  expect(utterances[0]).toMatchObject({ text: sentences[0].english, rate: 0.5, lang: 'en-GB' });
   await click('Hiện câu & nghĩa');
   expect(container.textContent).toContain(sentences[0].english);
   await click('Câu tiếp →');
@@ -110,7 +110,7 @@ it('hides the learner script in roleplay, supports role changes and bounded comp
   await click('4. Nói'); await click('Hội thoại & đổi vai'); await click('Ẩn lời thoại của bạn');
   expect(container.textContent).not.toContain('My name is Minh.');
   expect(container.textContent).toContain('What is your name?');
-  const role = container.querySelectorAll('select')[1];
+  const role = [...container.querySelectorAll('label')].find(label => label.textContent?.startsWith('Vai của bạn'))!.querySelector('select')!;
   await act(async () => { role.value = '0'; role.dispatchEvent(new Event('change', { bubbles: true })); });
   expect(container.textContent).not.toContain('What is your name?');
   expect(container.textContent).toContain('My name is Minh.');
@@ -133,4 +133,40 @@ it('supports free speaking prompts and explicit lesson completion from review', 
 it('keeps contractions distinct while normalizing smart apostrophes', () => {
   expect(normalizeAnswer('  I’m here! ')).toBe(normalizeAnswer("I'm here."));
   expect(normalizeAnswer('Im here')).not.toBe(normalizeAnswer("I'm here"));
+});
+
+it('keeps normal playback at 1 and applies the chosen very slow speed', async () => {
+  await click('2. Nghe'); await click('Nghe câu');
+  expect(utterances.at(-1).rate).toBe(1);
+  const speed = container.querySelector('select[aria-label="Tốc độ nghe chậm"]') as HTMLSelectElement;
+  await act(async () => { speed.value = '0.35'; speed.dispatchEvent(new Event('change', { bubbles: true })); });
+  await click('Nghe chậm');
+  expect(utterances.at(-1).rate).toBe(0.35);
+  await click('4. Nói'); await click('Hội thoại & đổi vai'); await click('Nghe lượt chậm');
+  expect(utterances.at(-1)).toMatchObject({ text: 'What is your name?', rate: 0.35 });
+});
+
+it('inserts a 600ms pause between words and cancels remaining words on stop', async () => {
+  vi.useFakeTimers();
+  await click('2. Nghe'); await click('Nghe tách từng từ');
+  expect(utterances).toHaveLength(1);
+  expect(utterances[0]).toMatchObject({ text: 'My', rate: 0.5 });
+  await act(async () => { utterances[0].onend(); await vi.advanceTimersByTimeAsync(599); });
+  expect(utterances).toHaveLength(1);
+  await act(async () => { await vi.advanceTimersByTimeAsync(1); });
+  expect(utterances[1].text).toBe('name');
+  await act(async () => { utterances[1].onend(); });
+  await click('Dừng nghe');
+  await act(async () => { await vi.runAllTimersAsync(); });
+  expect(utterances).toHaveLength(2);
+});
+
+it('does not play old words after moving to a different sentence', async () => {
+  vi.useFakeTimers();
+  await click('2. Nghe'); await click('Nghe tách từng từ');
+  const old = utterances[0];
+  await act(async () => old.onend());
+  await click('Câu tiếp →');
+  await act(async () => { old.onend(); await vi.runAllTimersAsync(); });
+  expect(utterances).toHaveLength(1);
 });
