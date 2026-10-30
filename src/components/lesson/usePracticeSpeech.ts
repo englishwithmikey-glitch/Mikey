@@ -33,6 +33,10 @@ export function usePracticeSpeech(scope: string) {
     const current = generation.current;
     const tts = () => {
       if (current !== generation.current) return;
+      if (rate < 0.7) {
+        speakSequence(text, rate, rate <= 0.35 ? 1 : rate <= 0.5 ? 2 : 3, rate <= 0.35 ? 1000 : rate <= 0.5 ? 750 : 450);
+        return;
+      }
       if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
         setMessage('Thiết bị chưa hỗ trợ giọng đọc. Bạn vẫn có thể đọc và luyện trực tiếp.');
         setSpeaking(false); return;
@@ -52,11 +56,23 @@ export function usePracticeSpeech(scope: string) {
     const element = new Audio(audioUrl);
     audio.current = element; element.playbackRate = rate;
     element.onended = () => { if (current === generation.current) setSpeaking(false); };
-    element.onerror = tts;
-    setSpeaking(true); void element.play().catch(tts);
+    let usedFallback = false;
+    const fallback = () => {
+      if (usedFallback || current !== generation.current) return;
+      usedFallback = true;
+      element.onerror = null; element.onended = null; element.pause();
+      if (audio.current === element) audio.current = null;
+      tts();
+    };
+    element.onerror = fallback;
+    setSpeaking(true); void element.play().catch(fallback);
   }
 
   function speakWords(text: string, rate = 0.5) {
+    speakSequence(text, rate, 1, 600);
+  }
+
+  function speakSequence(text: string, rate: number, wordsPerChunk: number, pauseMs: number) {
     stop(); setMessage('');
     if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
       setMessage('Thiết bị chưa hỗ trợ giọng đọc tách từ. Bạn có thể dùng nút nghe câu.'); return;
@@ -68,13 +84,15 @@ export function usePracticeSpeech(scope: string) {
     const next = () => {
       if (current !== generation.current) return;
       if (index >= words.length) { setSpeaking(false); return; }
-      const utterance = new SpeechSynthesisUtterance(words[index++]);
+      const chunk = words.slice(index, index + wordsPerChunk).join(' ');
+      index += wordsPerChunk;
+      const utterance = new SpeechSynthesisUtterance(chunk);
       utterance.lang = 'en-GB'; utterance.rate = rate;
       if (voice) utterance.voice = voice;
       utterance.onend = () => {
         if (current !== generation.current) return;
-        if (index === words.length) setSpeaking(false);
-        else wordPause.current = setTimeout(next, 600);
+        if (index >= words.length) setSpeaking(false);
+        else wordPause.current = setTimeout(next, pauseMs);
       };
       utterance.onerror = () => {
         if (current === generation.current) { stop(); setMessage('Không đọc được từ này. Vui lòng thử lại.'); }

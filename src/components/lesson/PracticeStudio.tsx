@@ -31,7 +31,15 @@ export default function PracticeStudio(props: Props) {
   const [revealed, setRevealed] = useState(false);
   const [results, setResults] = useState<Record<string, boolean>>({});
   const [speakingMode, setSpeakingMode] = useState<'sentence' | 'dialogue'>('sentence');
-  const [slowRate, setSlowRate] = useState(0.5);
+  const [slowRate, setSlowRate] = useState(() => {
+    try {
+      const saved = Number(localStorage.getItem('ewm_slow_listening_rate'));
+      return [0.35, 0.5, 0.65].includes(saved) ? saved : 0.5;
+    } catch { return 0.5; }
+  });
+  useEffect(() => {
+    try { localStorage.setItem('ewm_slow_listening_rate', String(slowRate)); } catch { /* Optional local preference. */ }
+  }, [slowRate]);
   const sentence = sentences[index];
   const speech = usePracticeSpeech(`${props.scope}:${step}:${index}:${speakingMode}:${slowRate}`);
   const metadata = useMemo(() => pack?.sentences.find(item => normalizeAnswer(item.english) === normalizeAnswer(sentence?.english || '')), [pack, sentence]);
@@ -65,6 +73,7 @@ export default function PracticeStudio(props: Props) {
           <option value={0.65}>Hơi chậm · 0,65</option>
         </select>
       </label>}
+      {['listen', 'type', 'speak'].includes(step) && <p className="text-xs text-slate-400">Khi dùng giọng đọc thiết bị, “Nghe chậm” ngắt nghỉ giữa các cụm từ; mức “Rất chậm” đọc từng từ.</p>}
       {packError && <p role="alert" className="text-amber-300">Chưa tải được bộ hội thoại. Bạn vẫn có thể luyện các câu bên dưới; tải lại trang để thử lại.</p>}
       {step === 'learn' && metadata && (
         <div className="rounded-xl border border-slate-700 bg-slate-900 p-4 space-y-2">

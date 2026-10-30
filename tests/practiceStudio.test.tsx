@@ -37,6 +37,7 @@ async function type(text: string) {
 beforeEach(async () => {
   Object.assign(globalThis, { IS_REACT_ACT_ENVIRONMENT: true });
   vi.clearAllMocks();
+  localStorage.clear();
   recognition = undefined; utterances = [];
   vi.stubGlobal('SpeechSynthesisUtterance', class { constructor(public text: string) {} });
   vi.stubGlobal('speechSynthesis', { cancel: vi.fn(), getVoices: () => [], speak: (value: any) => utterances.push(value) });
@@ -64,7 +65,7 @@ it('hides listening answers until requested and plays slow British speech', asyn
   await click('2. Nghe');
   expect(container.textContent).not.toContain(sentences[0].english);
   await click('Nghe chậm');
-  expect(utterances[0]).toMatchObject({ text: sentences[0].english, rate: 0.5, lang: 'en-GB' });
+  expect(utterances[0]).toMatchObject({ text: 'My name', rate: 0.5, lang: 'en-GB' });
   await click('Hiện câu & nghĩa');
   expect(container.textContent).toContain(sentences[0].english);
   await click('Câu tiếp →');
@@ -143,7 +144,7 @@ it('keeps normal playback at 1 and applies the chosen very slow speed', async ()
   await click('Nghe chậm');
   expect(utterances.at(-1).rate).toBe(0.35);
   await click('4. Nói'); await click('Hội thoại & đổi vai'); await click('Nghe lượt chậm');
-  expect(utterances.at(-1)).toMatchObject({ text: 'What is your name?', rate: 0.35 });
+  expect(utterances.at(-1)).toMatchObject({ text: 'What', rate: 0.35 });
 });
 
 it('inserts a 600ms pause between words and cancels remaining words on stop', async () => {
@@ -169,4 +170,41 @@ it('does not play old words after moving to a different sentence', async () => {
   await click('Câu tiếp →');
   await act(async () => { old.onend(); await vi.runAllTimersAsync(); });
   expect(utterances).toHaveLength(1);
+});
+
+it('paces slow listening even if the voice engine ends chunks immediately', async () => {
+  vi.useFakeTimers();
+  await click('3. Nghe & gõ');
+  await click('Nghe câu');
+  expect(utterances[0].text).toBe('My name is Anna.');
+  await click('Nghe chậm');
+  expect(utterances[1].text).toBe('My name');
+  await act(async () => { utterances[1].onend(); await vi.advanceTimersByTimeAsync(749); });
+  expect(utterances).toHaveLength(2);
+  await act(async () => { await vi.advanceTimersByTimeAsync(1); });
+  expect(utterances[2].text).toBe('is Anna.');
+  await act(async () => { utterances[2].onend(); await vi.runAllTimersAsync(); });
+  expect(utterances).toHaveLength(3);
+});
+
+it('paces very slow listening one word per second between voice chunks', async () => {
+  vi.useFakeTimers();
+  await click('2. Nghe');
+  const speed = container.querySelector('select[aria-label="Tốc độ nghe chậm"]') as HTMLSelectElement;
+  await act(async () => { speed.value = '0.35'; speed.dispatchEvent(new Event('change', { bubbles: true })); });
+  await click('Nghe chậm');
+  expect(utterances[0].text).toBe('My');
+  await act(async () => { utterances[0].onend(); await vi.advanceTimersByTimeAsync(999); });
+  expect(utterances).toHaveLength(1);
+  await act(async () => { await vi.advanceTimersByTimeAsync(1); });
+  expect(utterances[1].text).toBe('name');
+});
+
+it('remembers the selected slow speed when opening another lesson', async () => {
+  await click('2. Nghe');
+  const speed = container.querySelector('select[aria-label="Tốc độ nghe chậm"]') as HTMLSelectElement;
+  await act(async () => { speed.value = '0.35'; speed.dispatchEvent(new Event('change', { bubbles: true })); });
+  await act(async () => root.render(<Studio key="another-lesson" />));
+  await click('2. Nghe');
+  expect((container.querySelector('select[aria-label="Tốc độ nghe chậm"]') as HTMLSelectElement).value).toBe('0.35');
 });
