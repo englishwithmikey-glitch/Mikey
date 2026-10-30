@@ -66,3 +66,17 @@ for (const options of [{ wrongCourse: true }, { conflict: true }]) {
   await db.close();
 }
 console.log('PASS: full/minimal schemas, 20 lessons/200 sentences, ordering, original preservation, safe rerun, course guard and atomic rollback on title conflict.');
+
+// Formatting variants are the same verified course, not a different target.
+for (const title of [
+  'EnglishwithMikey – Basic Communication A1  ',
+  'ENGLISHWITHMIKEY — BASIC COMMUNICATION A1',
+  'EnglishwithMikey\u00a0–\u00a0Basic Communication A1',
+]) {
+  const db = await database();
+  await db.query('UPDATE courses SET title=$1 WHERE id=1', [title]);
+  await db.exec(sql);
+  assert.equal((await db.query('SELECT count(*)::int AS n FROM lessons')).rows[0].n, 22);
+  await db.close();
+}
+console.log('PASS: course title case, trailing whitespace, and non-breaking spaces.');

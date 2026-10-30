@@ -45,7 +45,7 @@ BEGIN
   PERFORM pg_advisory_xact_lock(hashtext(pack_id));
   IF NOT EXISTS (
     SELECT 1 FROM public.courses
-    WHERE id = 1 AND title LIKE 'EnglishwithMikey%Basic Communication A1'
+    WHERE id = 1 AND regexp_replace(lower(title), '[^a-z0-9]', '', 'g') = 'englishwithmikeybasiccommunicationa1'
   ) THEN
     RAISE EXCEPTION 'Course 1 does not match Basic Communication A1. No changes made.';
   END IF;
