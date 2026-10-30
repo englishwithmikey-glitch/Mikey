@@ -1,0 +1,6 @@
+{
+  "name": "EnglishwithMikey",
+  "description": "Premium English learning platform designed for Vietnamese learners, featuring general English, communication, IELTS, TOEIC, and interactive exercises.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
