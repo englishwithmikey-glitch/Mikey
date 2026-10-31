@@ -59,14 +59,14 @@ afterEach(async () => { await act(async () => root.unmount()); container.remove(
 
 it('shows five learning steps and identifies automatic IPA', () => {
   expect(container.querySelectorAll('nav button')).toHaveLength(5);
-  expect(container.textContent).toContain('IPA Anh–Anh tạo tự động');
+  expect(container.textContent).toContain('IPA tham khảo Anh–Anh tạo tự động');
 });
 
-it('hides listening answers until requested and plays slow British speech', async () => {
+it('hides listening answers until requested and plays slow American speech', async () => {
   await click('2. Nghe');
   expect(container.textContent).not.toContain(sentences[0].english);
   await click('Nghe chậm');
-  expect(utterances[0]).toMatchObject({ text: 'My name is Anna.', rate: 0.5, lang: 'en-GB' });
+  expect(utterances[0]).toMatchObject({ text: 'My name is Anna.', rate: 0.5, lang: 'en-US' });
   await click('Hiện câu & nghĩa');
   expect(container.textContent).toContain(sentences[0].english);
   await click('Câu tiếp →');
@@ -99,7 +99,7 @@ it('requests the mic only on click and discards results after navigating', async
   await click('4. Nói'); expect(recognition).toBeUndefined();
   await click('Bật micro & nói');
   expect(recognition.start).toHaveBeenCalledOnce();
-  expect(recognition.lang).toBe('en-GB');
+  expect(recognition.lang).toBe('en-US');
   await act(async () => recognition.onresult({ results: [[{ transcript: 'My name is Minh' }]] }));
   expect(container.textContent).toContain('Bản chép lời tự động: My name is Minh');
   const old = recognition;
@@ -211,4 +211,14 @@ it('remembers the selected slow speed when opening another lesson', async () => 
   await act(async () => root.render(<Studio key="another-lesson" />));
   await click('2. Nghe');
   expect((container.querySelector('select[aria-label="Tốc độ nghe chậm"]') as HTMLSelectElement).value).toBe('0.35');
+});
+
+it('selects an American browser voice ahead of an available British voice', async () => {
+  const british = { lang: 'en-GB', name: 'Daniel' };
+  const american = { lang: 'en-US', name: 'Samantha' };
+  (speechSynthesis.getVoices as any) = () => [british, american];
+  await click('2. Nghe'); await click('Nghe chậm');
+  expect(utterances.at(-1).voice).toBe(american);
+  await click('Nghe tách từng từ');
+  expect(utterances.at(-1).voice).toBe(american);
 });

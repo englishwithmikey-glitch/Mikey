@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { Readable } from 'node:stream';
 import { expect, it, vi } from 'vitest';
-import { practiceAudioPlugin } from '../server/practiceAudio';
+import { practiceAudioPlugin, selectAmericanVoice } from '../server/practiceAudio';
 
 async function endpoint(platform: NodeJS.Platform = 'darwin') {
   const render = vi.fn().mockResolvedValue(Buffer.from('RIFF sentence audio'));
@@ -36,4 +36,13 @@ it('reports unsupported platforms without invoking native commands', async () =>
   const { render, request } = await endpoint('linux');
   expect((await request('Hello.')).statusCode).toBe(501);
   expect(render).not.toHaveBeenCalled();
+});
+
+it('prefers Samantha US and never substitutes a British native voice', () => {
+  const british = 'Daniel             en_GB    # Hello';
+  const alex = 'Alex               en_US    # Hello';
+  const samantha = 'Samantha           en_US    # Hello';
+  expect(selectAmericanVoice([british, alex, samantha].join('\n'))).toBe('Samantha');
+  expect(selectAmericanVoice([british, alex].join('\n'))).toBe('Alex');
+  expect(selectAmericanVoice(british)).toBeUndefined();
 });

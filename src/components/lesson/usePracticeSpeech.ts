@@ -42,9 +42,9 @@ export function usePracticeSpeech(scope: string) {
         setSpeaking(false); return;
       }
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-GB'; utterance.rate = rate;
+      utterance.lang = 'en-US'; utterance.rate = rate;
       const voices = window.speechSynthesis.getVoices();
-      const voice = voices.find(item => item.lang.toLowerCase() === 'en-gb');
+      const voice = voices.find(item => item.lang.toLowerCase() === 'en-us');
       if (voice) utterance.voice = voice;
       utterance.onend = () => { if (current === generation.current) setSpeaking(false); };
       utterance.onerror = () => {
@@ -84,7 +84,7 @@ export function usePracticeSpeech(scope: string) {
       playFile(url);
     }).catch(() => {
       if (current !== generation.current) return;
-      if (rate < 0.7) setMessage('Chưa tạo được âm thanh giảm tốc. Đang dùng giọng trình duyệt; tốc độ có thể phụ thuộc thiết bị.');
+      if (rate < 0.7) setMessage('Chưa tạo được âm thanh giọng Mỹ giảm tốc. Đang dùng giọng trình duyệt; giọng và tốc độ có thể phụ thuộc thiết bị.');
       tts();
     });
   }
@@ -100,7 +100,7 @@ export function usePracticeSpeech(scope: string) {
     }
     const current = generation.current;
     const words = text.trim().split(/\s+/).filter(Boolean);
-    const voice = window.speechSynthesis.getVoices().find(item => item.lang.toLowerCase() === 'en-gb');
+    const voice = window.speechSynthesis.getVoices().find(item => item.lang.toLowerCase() === 'en-us');
     let index = 0;
     const next = () => {
       if (current !== generation.current) return;
@@ -108,7 +108,7 @@ export function usePracticeSpeech(scope: string) {
       const chunk = words.slice(index, index + wordsPerChunk).join(' ');
       index += wordsPerChunk;
       const utterance = new SpeechSynthesisUtterance(chunk);
-      utterance.lang = 'en-GB'; utterance.rate = rate;
+      utterance.lang = 'en-US'; utterance.rate = rate;
       if (voice) utterance.voice = voice;
       utterance.onend = () => {
         if (current !== generation.current) return;
@@ -132,7 +132,7 @@ export function usePracticeSpeech(scope: string) {
     const current = generation.current;
     try {
       const instance = new BrowserRecognition();
-      instance.lang = 'en-GB'; instance.interimResults = false;
+      instance.lang = 'en-US'; instance.interimResults = false;
       instance.onresult = (event: any) => {
         if (current === generation.current) setTranscript(event.results[0][0].transcript);
       };

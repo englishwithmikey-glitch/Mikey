@@ -18,16 +18,22 @@ function command(executable: string, args: string[], input = ''): Promise<string
   });
 }
 
+export function selectAmericanVoice(list: string): string | undefined {
+  const voices = list.split('\n').map(line => line.match(/^(.+?)\s+(en_[A-Za-z_]+)\s+#/)).filter(Boolean);
+  const american = voices.filter(item => item![2] === 'en_US');
+  const voice = american.find(item => item![1].trim() === 'Samantha') || american[0];
+  return voice?.[1].trim();
+}
+
 export async function renderMacAudio(text: string): Promise<Buffer> {
   const list = await command('/usr/bin/say', ['-v', '?']);
-  const voices = list.split('\n').map(line => line.match(/^(.+?)\s+(en_[A-Za-z_]+)\s+#/)).filter(Boolean);
-  const voice = voices.find(item => item![2] === 'en_GB') || voices.find(item => item![2].startsWith('en_'));
-  if (!voice) throw new Error('No English voice');
+  const voice = selectAmericanVoice(list);
+  if (!voice) throw new Error('No American English voice');
   const directory = await mkdtemp(join(tmpdir(), 'mikey-audio-'));
   try {
     const source = join(directory, 'sentence.aiff');
     const target = join(directory, 'sentence.wav');
-    await command('/usr/bin/say', ['-v', voice[1].trim(), '-r', '175', '-o', source], text);
+    await command('/usr/bin/say', ['-v', voice, '-r', '175', '-o', source], text);
     await command('/usr/bin/afconvert', ['-f', 'WAVE', '-d', 'LEI16', source, target]);
     return await readFile(target);
   } finally { await rm(directory, { recursive: true, force: true }); }

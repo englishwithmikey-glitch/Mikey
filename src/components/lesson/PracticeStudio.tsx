@@ -78,13 +78,13 @@ export default function PracticeStudio(props: Props) {
       {step === 'learn' && metadata && (
         <div className="rounded-xl border border-slate-700 bg-slate-900 p-4 space-y-2">
           <p className="text-amber-300">IPA: {sentence.ipa || metadata.ipa}</p>
-          {metadata.ipa_source === 'espeak-ng-en-gb-auto' && <p className="text-xs text-slate-400">IPA Anh–Anh tạo tự động, cần giáo viên rà soát.</p>}
+          {metadata.ipa_source === 'espeak-ng-en-gb-auto' && <p className="text-xs text-slate-400">IPA tham khảo Anh–Anh tạo tự động; có thể khác giọng Mỹ đang nghe.</p>}
           <p className="text-sm text-emerald-200">{metadata.pronunciation_focus}</p>
         </div>
       )}
       {step !== 'learn' && sentence && (
         <div className="rounded-2xl border border-slate-700 bg-slate-900 p-5 space-y-5">
-          <p className="text-emerald-300">Câu {index + 1} / {sentences.length} · Giọng Anh–Anh nếu thiết bị hỗ trợ</p>
+          <p className="text-emerald-300">Câu {index + 1} / {sentences.length} · Ưu tiên giọng Anh–Mỹ nếu thiết bị hỗ trợ</p>
           {step === 'listen' && <>
             <h2 className="text-xl font-bold">Nghe trước, mở câu sau</h2>
             <p className="text-slate-300">Nghe hai lần, chú ý từ được nhấn, sau đó nhắc lại.</p>
