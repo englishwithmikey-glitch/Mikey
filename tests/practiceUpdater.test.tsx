@@ -22,10 +22,10 @@ async function fixtureFetch(input: Parameters<typeof fetch>[0]) {
   return new Response(await readFile(new URL('../' + path, import.meta.url)));
 }
 
-it('installs five verified files, backs up originals and preserves local settings', async () => {
+it('installs verified files, backs up originals and preserves local settings', async () => {
   const root = await app();
   const result = await updatePractice(root, fixtureFetch);
-  expect(result.updated).toBe(5);
+  expect(result.updated).toBe(files.length);
   for (const file of files) expect(await readFile(join(root, file.path), 'utf8')).toBe(await readFile(new URL('../' + file.path, import.meta.url), 'utf8'));
   expect(await readFile(join(result.backup, 'src/components/lesson/LessonPlayer.tsx'), 'utf8')).toBe('User original code');
   expect(await readFile(join(root, '.env.local'), 'utf8')).toBe('USER_CONFIG=preserved');

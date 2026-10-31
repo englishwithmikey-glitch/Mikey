@@ -4,7 +4,7 @@ import { readFile, writeFile, mkdir, rename, rm, copyFile, lstat, realpath, open
 import { createHash, randomUUID } from 'node:crypto';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-export const revision = 'd6382fbbd4198df887486822e6015b142cf85d90';
+export const revision = '3af8b6656d982204cc9dd4428fcd77825e98e13b';
 export const files = [
   {
     "path": "src/components/lesson/LessonPlayer.tsx",
@@ -12,11 +12,11 @@ export const files = [
   },
   {
     "path": "src/components/lesson/PracticeStudio.tsx",
-    "sha256": "953abae679af96ff3a3e98e25e20e5866ee54db295f9e76d00a384a689421809"
+    "sha256": "32b3ee8f7dc519fd1d62ee5e8ad7c060de7381a03fc203469426168cf7e3487b"
   },
   {
     "path": "src/components/lesson/usePracticeSpeech.ts",
-    "sha256": "e6710691834df0177a11ff76a65bf43d0094ab37003d5b6f2f4790565dd53707"
+    "sha256": "ddb6b606f85fea05ce1519df23177886f91ac84b1446963b3a87884bd6dff6f1"
   },
   {
     "path": "src/data/practicePacks.json",
@@ -25,6 +25,14 @@ export const files = [
   {
     "path": "src/lib/practice.ts",
     "sha256": "f129eff4eef707b0a0bfe4b70add880eac13087c0947a43cd6f02c855b5d39af"
+  },
+  {
+    "path": "vite.config.ts",
+    "sha256": "30e14152485d385665813e784558acb09655956437c0fa6f5210dc10ee52fa15"
+  },
+  {
+    "path": "server/practiceAudio.ts",
+    "sha256": "3f70d421b1f626e56367f39106642821df41742a5eaefbdec122773a35631338"
   }
 ];
 
@@ -115,6 +123,6 @@ export async function isMainModule(argument, moduleUrl) {
 if (await isMainModule(process.argv[1], import.meta.url)) {
   updatePractice(process.cwd()).then(result => {
     console.log(`Đã cập nhật ${result.updated} file. Bản cũ được giữ tại: ${result.backup}`);
-    console.log('Chạy npm run dev, rồi tải lại trang. Dữ liệu Supabase cần nhập SQL v2 riêng.');
+    console.log('Chạy npm run dev, rồi tải lại trang. Bản sửa âm thanh này không cần chạy SQL.');
   }).catch(error => { console.error('Chưa cập nhật được:', error.message); process.exitCode = 1; });
 }
