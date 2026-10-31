@@ -4,7 +4,7 @@ import { readFile, writeFile, mkdir, rename, rm, copyFile, lstat, realpath, open
 import { createHash, randomUUID } from 'node:crypto';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-export const revision = '38c2131613144c7d2a05c4d9fa2879e0ff2553fd';
+export const revision = '57ddf3f4814f99535e25011f3c4877271f5b6410';
 export const files = [
   {
     "path": "src/components/lesson/LessonPlayer.tsx",
@@ -12,11 +12,11 @@ export const files = [
   },
   {
     "path": "src/components/lesson/PracticeStudio.tsx",
-    "sha256": "32b3ee8f7dc519fd1d62ee5e8ad7c060de7381a03fc203469426168cf7e3487b"
+    "sha256": "95423d152596807b062ef4d66c126c8404a300c24369310740c4e0f8529ba438"
   },
   {
     "path": "src/components/lesson/usePracticeSpeech.ts",
-    "sha256": "664e723356d920777b14ae10a9016317801bc22f6fb6543e5cf0564f6d4ec2c7"
+    "sha256": "8c5b9d430fdaa43f80f430a8460e601c6c68b042d0a14a3027d35c11bbf1e633"
   },
   {
     "path": "src/data/practicePacks.json",
@@ -32,7 +32,7 @@ export const files = [
   },
   {
     "path": "server/practiceAudio.ts",
-    "sha256": "3f70d421b1f626e56367f39106642821df41742a5eaefbdec122773a35631338"
+    "sha256": "571bd64bc9385a58cfe0de32e30bff2baab85466a44551547dc79a0b872738c5"
   }
 ];
 
