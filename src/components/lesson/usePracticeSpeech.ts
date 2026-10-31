@@ -6,6 +6,8 @@ export function usePracticeSpeech(scope: string) {
   const recognition = useRef<any>(null);
   const generation = useRef(0);
   const audio = useRef<HTMLAudioElement | null>(null);
+  const request = useRef<AbortController | null>(null);
+  const objectUrl = useRef<string | null>(null);
   const wordPause = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const [message, setMessage] = useState('');
   const [transcript, setTranscript] = useState('');
@@ -13,6 +15,8 @@ export function usePracticeSpeech(scope: string) {
   const [speaking, setSpeaking] = useState(false);
   const stop = useCallback(() => {
     generation.current++;
+    request.current?.abort(); request.current = null;
+    if (objectUrl.current) { URL.revokeObjectURL(objectUrl.current); objectUrl.current = null; }
     clearTimeout(wordPause.current);
     wordPause.current = undefined;
     recognition.current?.abort();
@@ -33,10 +37,6 @@ export function usePracticeSpeech(scope: string) {
     const current = generation.current;
     const tts = () => {
       if (current !== generation.current) return;
-      if (rate < 0.7) {
-        speakSequence(text, rate, rate <= 0.35 ? 1 : rate <= 0.5 ? 2 : 3, rate <= 0.35 ? 1000 : rate <= 0.5 ? 750 : 450);
-        return;
-      }
       if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
         setMessage('Thiết bị chưa hỗ trợ giọng đọc. Bạn vẫn có thể đọc và luyện trực tiếp.');
         setSpeaking(false); return;
@@ -52,9 +52,10 @@ export function usePracticeSpeech(scope: string) {
       };
       setSpeaking(true); window.speechSynthesis.speak(utterance);
     };
-    if (!audioUrl) { tts(); return; }
-    const element = new Audio(audioUrl);
-    audio.current = element; element.playbackRate = rate;
+    const playFile = (url: string) => {
+    if (current !== generation.current) return;
+    const element = new Audio(url);
+    audio.current = element; element.playbackRate = rate; element.preservesPitch = true;
     element.onended = () => { if (current === generation.current) setSpeaking(false); };
     let usedFallback = false;
     const fallback = () => {
@@ -66,6 +67,25 @@ export function usePracticeSpeech(scope: string) {
     };
     element.onerror = fallback;
     setSpeaking(true); void element.play().catch(fallback);
+    };
+    if (audioUrl) { playFile(audioUrl); return; }
+    const controller = new AbortController();
+    request.current = controller;
+    setSpeaking(true);
+    void fetch('/api/practice-audio', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }), signal: controller.signal,
+    }).then(async response => {
+      if (!response.ok) throw new Error('Audio unavailable');
+      const blob = await response.blob();
+      if (current !== generation.current) return;
+      const url = URL.createObjectURL(blob); objectUrl.current = url;
+      playFile(url);
+    }).catch(() => {
+      if (current !== generation.current) return;
+      if (rate < 0.7) setMessage('Chưa tạo được âm thanh giảm tốc. Đang dùng giọng trình duyệt; tốc độ có thể phụ thuộc thiết bị.');
+      tts();
+    });
   }
 
   function speakWords(text: string, rate = 0.5) {

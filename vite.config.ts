@@ -1,3 +1,4 @@
+import { practiceAudioPlugin } from './server/practiceAudio';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -15,7 +16,7 @@ export default defineConfig(({ mode }) => {
     'sb_publishable_jATTRrx5vNGjrKXbYfSx4A_aRFH7mHg';
 
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), practiceAudioPlugin()],
     define: {
       'import.meta.env.VITE_SUPABASE_URL': JSON.stringify(supabaseUrl),
       'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(supabaseAnonKey),

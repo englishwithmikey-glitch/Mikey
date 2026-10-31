@@ -73,7 +73,7 @@ export default function PracticeStudio(props: Props) {
           <option value={0.65}>Hơi chậm · 0,65</option>
         </select>
       </label>}
-      {['listen', 'type', 'speak'].includes(step) && <p className="text-xs text-slate-400">Khi dùng giọng đọc thiết bị, “Nghe chậm” ngắt nghỉ giữa các cụm từ; mức “Rất chậm” đọc từng từ.</p>}
+      {['listen', 'type', 'speak'].includes(step) && <p className="text-xs text-slate-400">“Nghe chậm” giảm tốc độ cả câu. “Nghe tách từng từ” là chế độ riêng.</p>}
       {packError && <p role="alert" className="text-amber-300">Chưa tải được bộ hội thoại. Bạn vẫn có thể luyện các câu bên dưới; tải lại trang để thử lại.</p>}
       {step === 'learn' && metadata && (
         <div className="rounded-xl border border-slate-700 bg-slate-900 p-4 space-y-2">

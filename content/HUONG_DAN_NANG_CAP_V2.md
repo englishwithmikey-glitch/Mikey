@@ -5,7 +5,6 @@
 - 20 bài theo chủ đề (Lesson 3–22), mỗi bài 30 câu khác nhau: tổng 600 câu.
 - Mỗi chủ đề có 3 hội thoại ngắn, tổng 60 hội thoại; Lesson 1 có thêm 3 hội thoại dựa trên tài liệu tham khảo.
 - 5 bước: Học → Nghe → Nghe & gõ → Nói → Ôn tập.
-- Giọng đọc thiết bị ở mức chậm dùng khoảng nghỉ giữa các cụm: 0,35 = từng từ + nghỉ 1 giây; 0,5 = cụm 2 từ + nghỉ 750ms; 0,65 = cụm 3 từ + nghỉ 450ms. Web nhớ mức đã chọn khi mở bài khác.
 - Nghe chậm mặc định 0,5, chọn thêm mức 0,35 hoặc 0,65; nghe tách từng từ có khoảng nghỉ 600ms, dừng khi chuyển câu hoặc nhấn Dừng.
 - Luyện hội thoại có hướng dẫn, chọn/đổi vai, ẩn lời của người học và nói tự do.
 - IPA Anh–Anh từ tài liệu hoặc được tạo tự động bằng eSpeak NG; UI đánh dấu bản tạo tự động để giáo viên rà soát.
@@ -58,3 +57,6 @@ python3 scripts/build_practice_pack.py
 # rồi chạy build_practice_pack.py lần nữa.
 python3 scripts/build_practice_upgrade.py
 ```
+
+
+Nghe chậm trên Mac: Vite tạo WAV cả câu bằng giọng tiếng Anh có sẵn trong macOS, rồi trình duyệt giảm playbackRate và giữ cao độ. Không chèn khoảng nghỉ. Cần khởi động lại npm run dev sau cập nhật. Máy chủ Linux hoặc bản triển khai tĩnh cần file âm thanh riêng; khi không tạo được WAV, ứng dụng báo và dùng giọng trình duyệt. Chưa xác minh nghe thực tế trên Mac trong môi trường Linux.
