@@ -4,11 +4,11 @@ import { readFile, writeFile, mkdir, rename, rm, copyFile, lstat, realpath, open
 import { createHash, randomUUID } from 'node:crypto';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-export const revision = '3af8b6656d982204cc9dd4428fcd77825e98e13b';
+export const revision = '38c2131613144c7d2a05c4d9fa2879e0ff2553fd';
 export const files = [
   {
     "path": "src/components/lesson/LessonPlayer.tsx",
-    "sha256": "7dc3fac370100a67a58a8ba68a43aae377423453f58cafcf615af7be358df514"
+    "sha256": "149ada9cbb7f012567ae3079583846f200614909c49be2b0433366b1fcedadb5"
   },
   {
     "path": "src/components/lesson/PracticeStudio.tsx",
@@ -16,7 +16,7 @@ export const files = [
   },
   {
     "path": "src/components/lesson/usePracticeSpeech.ts",
-    "sha256": "ddb6b606f85fea05ce1519df23177886f91ac84b1446963b3a87884bd6dff6f1"
+    "sha256": "664e723356d920777b14ae10a9016317801bc22f6fb6543e5cf0564f6d4ec2c7"
   },
   {
     "path": "src/data/practicePacks.json",
