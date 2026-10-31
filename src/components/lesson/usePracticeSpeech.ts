@@ -32,7 +32,7 @@ export function usePracticeSpeech(scope: string) {
     return stop;
   }, [scope, stop]);
 
-  function speak(text: string, rate = 1, audioUrl?: string) {
+  function speak(text: string, rate = 1, _audioUrl?: string) {
     stop(); setMessage('');
     const current = generation.current;
     const tts = () => {
@@ -68,7 +68,8 @@ export function usePracticeSpeech(scope: string) {
     element.onerror = fallback;
     setSpeaking(true); void element.play().catch(fallback);
     };
-    if (audioUrl) { playFile(audioUrl); return; }
+    // Use one voice and one base speaking rate for every lesson. Existing
+    // recordings may have different tempos, so they cannot be the speed baseline.
     const controller = new AbortController();
     request.current = controller;
     setSpeaking(true);

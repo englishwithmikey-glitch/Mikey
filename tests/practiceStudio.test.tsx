@@ -13,7 +13,7 @@ let container: HTMLDivElement;
 let recognition: any;
 let utterances: any[];
 const sentences = [
-  { id: 's1', lesson_id: '3', english: 'My name is Anna.', vietnamese: 'Tôi tên là Anna.' },
+  { id: 's1', lesson_id: '3', english: 'My name is Anna.', vietnamese: 'Tôi tên là Anna.', audio_url: 'https://example.com/old-recording.mp3' },
   { id: 's2', lesson_id: '3', english: 'Nice to meet you.', vietnamese: 'Rất vui được gặp bạn.' },
 ];
 function Studio() {
@@ -173,7 +173,7 @@ it('does not play old words after moving to a different sentence', async () => {
   expect(utterances).toHaveLength(1);
 });
 
-it('plays a whole audio file continuously at the selected rate, preserving pitch', async () => {
+it('uses standardized whole sentence audio even when a lesson has an old recording', async () => {
   const players: any[] = [];
   vi.stubGlobal('Audio', class {
     playbackRate = 1; preservesPitch = false;
@@ -188,6 +188,9 @@ it('plays a whole audio file continuously at the selected rate, preserving pitch
   expect(players[0]).toMatchObject({ src: 'blob:sentence', playbackRate: 0.5, preservesPitch: true });
   expect(utterances).toHaveLength(0);
   expect(JSON.parse((fetch as any).mock.calls[0][1].body)).toEqual({ text: 'My name is Anna.' });
+  await click('Câu tiếp →'); await click('Nghe chậm');
+  expect(players[1].playbackRate).toBe(0.5);
+  expect(JSON.parse((fetch as any).mock.calls[1][1].body)).toEqual({ text: 'Nice to meet you.' });
   await click('Dừng nghe'); expect(players[0].pause).toHaveBeenCalled();
   expect(URL.revokeObjectURL).toHaveBeenCalledWith('blob:sentence');
 });

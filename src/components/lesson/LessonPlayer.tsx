@@ -97,7 +97,7 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({
     }
   }, [lesson.id]);
 
-  const playAudio = (text: string, audioUrl?: string) => playback.speak(text, 0.9, audioUrl);
+  const playAudio = (text: string, audioUrl?: string) => playback.speak(text, 1, audioUrl);
 
   // Requirement 8: Next sentence button
   const handleNext = async () => {
